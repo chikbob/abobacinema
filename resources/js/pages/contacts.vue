@@ -9,7 +9,7 @@
                 <div class="Mid__text">
                     <li>Телефони</li>
                 </div>
-                <li><span style="color: #f39c42">Каса:</span> (099) 123-45-67</li>
+                <li class="margin__bottom"><span style="color: #f39c42">Каса:</span> (099) 123-45-67</li>
                 <li><span style="color: #f39c42">Служба підтримки:</span> (099) 765-43-21</li>
                 <p></p>
                 <div class="Mid__text">
@@ -75,4 +75,8 @@ a {
 
     margin: 0 5.5rem 0 10rem;
     border: 2px solid #f39c42;
-}</style>
+}
+.margin__bottom {
+    margin-bottom: 0.25rem;
+}
+</style>

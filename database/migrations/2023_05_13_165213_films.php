@@ -10,20 +10,20 @@ return new class extends Migration
     {
         Schema::create('films', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
+            $table->string('movie_name');
             $table->string('poster');
             $table->string('age');
             $table->string('year');
             $table->string('original_name');
-            $table->string('directors');
+            $table->text('director_id');
             $table->dateTime('start_release');
             $table->dateTime('end_release');
             $table->string('language');
-            $table->string('genre');
-            $table->string('duration');
-            $table->string('country');
-            $table->string('studio');
-            $table->string('description');
+            $table->json('genre');
+            $table->text('duration');
+            $table->text('country_id');
+            $table->text('studio_id');
+            $table->text('description');
             $table->timestamps();
         });
     }

@@ -18,6 +18,8 @@ Route::get('/', function () {
     return Inertia::render('main');
 });
 
+// Route::get('/films/{film}', FilmPageController::class);
+
 Route::get('/sessions', fn()=>Inertia::render('sessions'));
 
 Route::get('/soon', fn()=>Inertia::render('soon'));
