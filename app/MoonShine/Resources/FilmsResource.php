@@ -24,7 +24,7 @@ class FilmsResource extends Resource
 		    ID::make()->sortable(),
             Text::make('Movie title', 'name'),
             Image::make('Poster', 'poster')
-            ->allowedExtensions(['jpg', 'png']),
+            ->allowedExtensions(['jpg', 'jpeg', 'png']),
             Text::make('Age limit', 'age'),
             Text::make('Release year', 'year'),
             Text::make('Original name of movie', 'original_name'),
