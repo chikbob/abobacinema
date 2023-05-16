@@ -7,11 +7,12 @@ use MoonShine\MoonShine;
 use MoonShine\Menu\MenuItem;
 use MoonShine\Menu\MenuGroup;
 use Illuminate\Support\ServiceProvider;
+use App\MoonShine\Resources\HallResource;
 use App\MoonShine\Resources\FilmsResource;
+use App\MoonShine\Resources\TicketResource;
 use App\MoonShine\Resources\VisitorResource;
 use App\MoonShine\Resources\SessionsResource;
 use App\MoonShine\Resources\DirectorsResource;
-use App\MoonShine\Resources\HallResource;
 use MoonShine\Resources\MoonShineUserResource;
 use MoonShine\Resources\MoonShineUserRoleResource;
 use App\MoonShine\Resources\ProducerStudioResource;
@@ -35,9 +36,10 @@ class MoonShineServiceProvider extends ServiceProvider
             ])
             ->icon('heroicons.view-columns'),
             MenuItem::make('Sessions', new SessionsResource(), 'heroicons.clock'),
+            MenuItem::make('Halls', new HallResource(), 'heroicons.tv'),
             MenuItem::make('Visitors', new VisitorResource(), 'heroicons.user-group')
             ->badge(fn() => Visitor::query()->count()),
-            MenuItem::make('Halls', new HallResource(), 'heroicons.tv'),
+            MenuItem::make('Tickets', new TicketResource(), 'heroicons.ticket'),
         ]);
     }
 }

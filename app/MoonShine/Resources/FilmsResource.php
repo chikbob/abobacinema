@@ -58,7 +58,7 @@ class FilmsResource extends Resource
             Text::make('Original name of movie', 'original_name')
             ->required(),
 
-            BelongsTo::make('Directors', 'director', fn($item) => $item->id .' | '. $item->name .' | '. $item->surname)
+            BelongsTo::make('Directors', 'director', fn($item) => $item->id .' | '. $item->name .' '. $item->surname)
             ->required(),
 
             Date::make('Release start', 'start_release')

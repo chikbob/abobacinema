@@ -11,7 +11,6 @@ return new class extends Migration
         Schema::create('sessions', function (Blueprint $table) {
             $table->id();
             $table->dateTime('session_time');
-            $table->integer('session_hall');
             $table->integer('film_id');
             $table->timestamps();
         });

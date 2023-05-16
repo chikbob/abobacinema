@@ -6,7 +6,6 @@ use DateTime;
 use App\Models\Sessions;
 use MoonShine\Fields\ID;
 use MoonShine\Fields\Date;
-use MoonShine\Fields\Number;
 use MoonShine\Fields\BelongsTo;
 use MoonShine\Resources\Resource;
 use MoonShine\Actions\FiltersAction;
@@ -27,10 +26,6 @@ class SessionsResource extends Resource
             ->required(),
             Date::make('Time', 'session_time')
             ->withTime()
-            ->required(),
-            Number::make('Hall', 'session_hall')
-            ->min(1)
-            ->max(5)
             ->required(),
         ];
 	}
