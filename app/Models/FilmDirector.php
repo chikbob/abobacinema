@@ -18,4 +18,9 @@ class FilmDirector extends Model
     {
         return $this->belongsTo(Film::class);
     }
+
+    public function director(): BelongsTo
+    {
+        return $this->belongsTo(Director::class);
+    }
 }

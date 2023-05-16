@@ -20,7 +20,6 @@ return new class extends Migration {
             $table->string('original_name');
             $table->integer('duration');
             $table->text('description');
-            $table->foreignIdFor(Language::class);
             $table->date('release_start_at');
             $table->date('release_end_at');
             $table->timestamps();

@@ -2,31 +2,27 @@
 
 namespace App\MoonShine\Resources;
 
-use DateTime;
-use App\Models\Sessions;
 use MoonShine\Fields\ID;
-use MoonShine\Fields\Date;
+use MoonShine\Fields\Text;
+
+use App\Models\FilmLanguage;
 use MoonShine\Fields\BelongsTo;
 use MoonShine\Resources\Resource;
 use MoonShine\Actions\FiltersAction;
 use Illuminate\Database\Eloquent\Model;
 
-class SessionsResource extends Resource
+class FilmLanguageResource extends Resource
 {
-	public static string $model = Sessions::class;
+	public static string $model = FilmLanguage::class;
 
-	public static string $title = 'Sessions';
+	public static string $title = 'FilmLanguage';
 
 	public function fields(): array
 	{
 		return [
 		    ID::make()->sortable(),
-            BelongsTo::make('Film', 'film', fn($item) => $item->id .' | '. $item->movie_name)
-            ->searchable()
-            ->required(),
-            Date::make('Time', 'session_time')
-            ->withTime()
-            ->required(),
+            BelongsTo::make('Film', 'film', fn($item) => $item->id .' | '. $item->name),
+            Text::make('Language', 'language')
         ];
 	}
 

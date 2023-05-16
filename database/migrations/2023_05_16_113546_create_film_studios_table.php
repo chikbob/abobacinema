@@ -13,7 +13,7 @@ return new class extends Migration
         Schema::create('film_studios', function (Blueprint $table) {
             $table->id();
             $table->foreignIdFor(Film::class);
-            $table->foreignIdFor(Studio::class);
+            $table->string('studio');
             $table->timestamps();
         });
     }

@@ -2,21 +2,25 @@
 
 namespace App\Providers;
 
+use App\Models\Film;
+use App\Models\Ticket;
 use App\Models\Visitor;
-use App\MoonShine\Resources\FilmCountryResource;
-use App\MoonShine\Resources\FilmDirectorResource;
-use App\MoonShine\Resources\FilmStudioResource;
 use MoonShine\MoonShine;
 use MoonShine\Menu\MenuItem;
 use MoonShine\Menu\MenuGroup;
+
 use Illuminate\Support\ServiceProvider;
-use App\MoonShine\Resources\HallResource;
 use App\MoonShine\Resources\FilmResource;
+use App\MoonShine\Resources\HallResource;
 use App\MoonShine\Resources\TicketResource;
+use App\MoonShine\Resources\SessionResource;
 use App\MoonShine\Resources\VisitorResource;
-use App\MoonShine\Resources\SessionsResource;
 use App\MoonShine\Resources\DirectorsResource;
 use MoonShine\Resources\MoonShineUserResource;
+use App\MoonShine\Resources\FilmStudioResource;
+use App\MoonShine\Resources\FilmCountryResource;
+use App\MoonShine\Resources\FilmDirectorResource;
+use App\MoonShine\Resources\FilmLanguageResource;
 use MoonShine\Resources\MoonShineUserRoleResource;
 use App\MoonShine\Resources\ProducerStudioResource;
 use App\MoonShine\Resources\ProducerCountryResource;
@@ -32,17 +36,21 @@ class MoonShineServiceProvider extends ServiceProvider
             ])->icon('heroicons.cog-6-tooth'),
 
             MenuGroup::make('Films', [
-                MenuItem::make('Films', new FilmResource(), 'heroicons.film'),
+                MenuItem::make('Films', new FilmResource(), 'heroicons.film')
+                ->badge(fn() => Film::query()->count()),
                 MenuItem::make('Film Directors', new FilmDirectorResource(), 'heroicons.users'),
-                MenuItem::make('Film Counties', new FilmCountryResource(), 'heroicons.users'),
-                MenuItem::make('Film Studios', new FilmStudioResource(), 'heroicons.users'),
+                MenuItem::make('Film Countries', new FilmCountryResource(), 'heroicons.globe-europe-africa'),
+                MenuItem::make('Film Studios', new FilmStudioResource(), 'heroicons.video-camera'),
+                MenuItem::make('Film Languages', new FilmLanguageResource(), 'heroicons.language'),
             ])
             ->icon('heroicons.view-columns'),
 
-            MenuItem::make('Sessions', new SessionsResource(), 'heroicons.clock'),
+            MenuItem::make('Sessions', new SessionResource(), 'heroicons.clock'),
             MenuItem::make('Halls', new HallResource(), 'heroicons.tv'),
-            MenuItem::make('Visitors', new VisitorResource(), 'heroicons.user-group'),
-            MenuItem::make('Tickets', new TicketResource(), 'heroicons.ticket'),
+            MenuItem::make('Visitors', new VisitorResource(), 'heroicons.user-group')
+            ->badge(fn() => Visitor::query()->count()),
+            MenuItem::make('Tickets', new TicketResource(), 'heroicons.ticket')
+            ->badge(fn() => Ticket::query()->count()),
         ]);
     }
 }

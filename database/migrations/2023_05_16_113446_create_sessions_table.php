@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Schema;
 return new class extends Migration {
     public function up(): void
     {
-        Schema::create('film_sessions', function (Blueprint $table) {
+        Schema::create('sessions', function (Blueprint $table) {
             $table->id();
             $table->foreignIdFor(Film::class);
             $table->foreignIdFor(Hall::class);

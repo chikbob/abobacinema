@@ -21,7 +21,9 @@ class FilmDirectorResource extends Resource
 	{
 		return [
 		    ID::make()->sortable(),
-            BelongsTo::make('Film', 'film', 'name')
+            BelongsTo::make('Film', 'film', fn($item) => $item->id .' | '. $item->name)
+            ->searchable(),
+            Text::make('Director', 'director'),
         ];
 	}
 

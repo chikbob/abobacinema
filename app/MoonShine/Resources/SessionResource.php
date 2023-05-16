@@ -2,27 +2,34 @@
 
 namespace App\MoonShine\Resources;
 
+use DateTime;
+use App\Models\Session;
 use MoonShine\Fields\ID;
-use App\Models\FilmStudio;
-
-use MoonShine\Fields\Text;
+use MoonShine\Fields\Date;
 use MoonShine\Fields\BelongsTo;
 use MoonShine\Resources\Resource;
 use MoonShine\Actions\FiltersAction;
 use Illuminate\Database\Eloquent\Model;
 
-class FilmStudioResource extends Resource
+class SessionResource extends Resource
 {
-	public static string $model = FilmStudio::class;
+	public static string $model = Session::class;
 
-	public static string $title = 'FilmStudio';
+	public static string $title = 'Sessions';
 
 	public function fields(): array
 	{
 		return [
 		    ID::make()->sortable(),
-            BelongsTo::make('Film', 'film', fn($item) => $item->id .' | '. $item->name),
-            Text::make('Studio', 'studio')
+            BelongsTo::make('Film', 'film', fn($item) => $item->id .' | '. $item->name)
+            ->searchable()
+            ->required(),
+            BelongsTo::make('Hall', 'hall', fn($item) => $item->name .' | '. $item->row .' | '. $item->seat)
+            ->searchable()
+            ->required(),
+            Date::make('Time', 'time')
+            ->withTime()
+            ->required(),
         ];
 	}
 

@@ -30,12 +30,16 @@ class FilmResource extends Resource
 		    ID::make()->sortable(),
             Text::make('Name', 'name'),
             Text::make('Original name', 'original_name'),
-            Image::make('Poster', 'poster'),
+            Image::make('Poster', 'poster')
+            ->disk('local')
+            ->dir('public')
+            ->removable()
+            ->allowedExtensions(['jpg', 'jpeg', 'png'])
+            ->required(),
             Number::make('Age', 'age'),
             Number::make('Year', 'year'),
             Number::make('Duration', 'duration'),
             Text::make('Description', 'description'),
-            BelongsTo::make('Language', 'language'),
             Date::make('Release start', 'release_start_at'),
             Date::make('Release end', 'release_end_at')
         ];

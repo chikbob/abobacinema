@@ -5,6 +5,7 @@ namespace App\MoonShine\Resources;
 use App\Models\Ticket;
 use MoonShine\Fields\ID;
 
+use MoonShine\Fields\Text;
 use MoonShine\Decorations\Grid;
 use MoonShine\Fields\BelongsTo;
 use MoonShine\Decorations\Column;
@@ -24,18 +25,12 @@ class TicketResource extends Resource
 		    ID::make()->sortable(),
                 Grid::make([
                     Column::make([
-                        BelongsTo::make('Session', 'session', fn($item) => 'Film: '. $item->film->movie_name .' | Time: '. $item->session_time)
+                        BelongsTo::make('Session', 'session', fn($item) => 'Film: '. $item->film->name .' | Time: '. $item->time)
                         ->searchable(),
                     ])
                     ->columnSpan(4),
                     Column::make([
-                        BelongsTo::make('Seat in hall', 'seat', fn($item) => 'Hall: '. $item->name .' | Row: '. $item->row .' | Seat: '. $item->seat)
-                        ->searchable(),
-                    ])
-                    ->columnSpan(4),
-                    Column::make([
-                        BelongsTo::make('Visitor', 'visitor', fn($item) => 'Name: '. $item->name .' | Telephone: '. $item->telephone .' | Email: '. $item->email)
-                        ->searchable(),
+                        Text::make('Price', 'price')
                     ])
                     ->columnSpan(4),
             ])
