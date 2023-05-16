@@ -3,12 +3,15 @@
 namespace App\Providers;
 
 use App\Models\Visitor;
+use App\MoonShine\Resources\FilmCountryResource;
+use App\MoonShine\Resources\FilmDirectorResource;
+use App\MoonShine\Resources\FilmStudioResource;
 use MoonShine\MoonShine;
 use MoonShine\Menu\MenuItem;
 use MoonShine\Menu\MenuGroup;
 use Illuminate\Support\ServiceProvider;
 use App\MoonShine\Resources\HallResource;
-use App\MoonShine\Resources\FilmsResource;
+use App\MoonShine\Resources\FilmResource;
 use App\MoonShine\Resources\TicketResource;
 use App\MoonShine\Resources\VisitorResource;
 use App\MoonShine\Resources\SessionsResource;
@@ -27,18 +30,18 @@ class MoonShineServiceProvider extends ServiceProvider
                 MenuItem::make('Users', new MoonShineUserResource(), 'heroicons.user-circle'),
                 MenuItem::make('Roles', new MoonShineUserRoleResource(), 'heroicons.shield-exclamation')
             ])->icon('heroicons.cog-6-tooth'),
-            MenuItem::make('Films', new FilmsResource(), 'heroicons.film'),
-            MenuGroup::make('Tables for Films', [
-                MenuItem::make('Directors', new DirectorsResource(), 'heroicons.users'),
-                MenuItem::make('Countries', new ProducerCountryResource(), 'heroicons.globe-europe-africa'),
-                MenuItem::make('Studios', new ProducerStudioResource(), 'heroicons.video-camera'),
-                
+
+            MenuGroup::make('Films', [
+                MenuItem::make('Films', new FilmResource(), 'heroicons.film'),
+                MenuItem::make('Film Directors', new FilmDirectorResource(), 'heroicons.users'),
+                MenuItem::make('Film Counties', new FilmCountryResource(), 'heroicons.users'),
+                MenuItem::make('Film Studios', new FilmStudioResource(), 'heroicons.users'),
             ])
             ->icon('heroicons.view-columns'),
+
             MenuItem::make('Sessions', new SessionsResource(), 'heroicons.clock'),
             MenuItem::make('Halls', new HallResource(), 'heroicons.tv'),
-            MenuItem::make('Visitors', new VisitorResource(), 'heroicons.user-group')
-            ->badge(fn() => Visitor::query()->count()),
+            MenuItem::make('Visitors', new VisitorResource(), 'heroicons.user-group'),
             MenuItem::make('Tickets', new TicketResource(), 'heroicons.ticket'),
         ]);
     }

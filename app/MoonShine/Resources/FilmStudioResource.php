@@ -2,24 +2,25 @@
 
 namespace App\MoonShine\Resources;
 
-use App\Models\Director;
-use MoonShine\Fields\ID;
-use MoonShine\Fields\Text;
-use MoonShine\Resources\Resource;
-use MoonShine\Actions\FiltersAction;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\FilmStudio;
 
-class DirectorsResource extends Resource
+use MoonShine\Fields\BelongsTo;
+use MoonShine\Resources\Resource;
+use MoonShine\Fields\ID;
+use MoonShine\Actions\FiltersAction;
+
+class FilmStudioResource extends Resource
 {
-	public static string $model = Director::class;
+	public static string $model = FilmStudio::class;
 
-	public static string $title = 'Directors';
+	public static string $title = 'FilmStudio';
 
 	public function fields(): array
 	{
 		return [
 		    ID::make()->sortable(),
-            Text::make('Name', 'name')->required(),
+            BelongsTo::make('Film', 'film', 'name')
         ];
 	}
 

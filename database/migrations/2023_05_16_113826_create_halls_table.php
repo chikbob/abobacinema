@@ -8,9 +8,10 @@ return new class extends Migration
 {
     public function up(): void
     {
-        Schema::create('producer_countries', function (Blueprint $table) {
+        Schema::create('halls', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
+            $table->string('key');
+            $table->string('value');
             $table->timestamps();
         });
     }

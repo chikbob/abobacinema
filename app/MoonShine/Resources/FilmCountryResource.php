@@ -2,27 +2,26 @@
 
 namespace App\MoonShine\Resources;
 
-use MoonShine\Fields\ID;
-use MoonShine\Fields\Text;
-
-use App\Models\ProducerStudio;
-use MoonShine\Resources\Resource;
-use MoonShine\Actions\FiltersAction;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\FilmCountry;
 
-class ProducerStudioResource extends Resource
+use MoonShine\Fields\BelongsTo;
+use MoonShine\Fields\Text;
+use MoonShine\Resources\Resource;
+use MoonShine\Fields\ID;
+use MoonShine\Actions\FiltersAction;
+
+class FilmCountryResource extends Resource
 {
-	public static string $model = ProducerStudio::class;
+	public static string $model = FilmCountry::class;
 
-	public static string $title = 'ProducerStudio';
+	public static string $title = 'FilmCountry';
 
 	public function fields(): array
 	{
 		return [
 		    ID::make()->sortable(),
-            
-            Text::make('Name of studio', 'name')
-            ->required()
+            BelongsTo::make('Film', 'film', 'name')
         ];
 	}
 
