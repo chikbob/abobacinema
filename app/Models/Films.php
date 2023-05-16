@@ -11,7 +11,8 @@ class Films extends Model
     protected $table = 'films';
 
     protected $casts = [
-        'genre' => 'json'
+        'genre' => 'json',
+        'studio' => 'json'
     ];
 
     use HasFactory;

@@ -142,8 +142,10 @@ class FilmsResource extends Resource
             BelongsTo::make('Producer country', 'country', fn($item) => $item->name)
             ->required(),
 
-            BelongsTo::make('Producer studio', 'studio', fn($item) => $item->name)
-            ->required(),
+            BelongsTo::make('Producer studio', 'studio', 'id')
+            ->required()
+            ->multiple()
+            ->searchable(),
             
             Text::make('Description', 'description')
             ->required(),

@@ -22,7 +22,7 @@ return new class extends Migration
             $table->json('genre');
             $table->text('duration');
             $table->text('country_id');
-            $table->text('studio_id');
+            $table->json('studio_id');
             $table->text('description');
             $table->timestamps();
         });
