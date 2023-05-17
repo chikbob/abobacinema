@@ -10,6 +10,7 @@ use MoonShine\Fields\BelongsTo;
 use MoonShine\Resources\Resource;
 use MoonShine\Actions\FiltersAction;
 use Illuminate\Database\Eloquent\Model;
+use MoonShine\Fields\Number;
 
 class SessionResource extends Resource
 {

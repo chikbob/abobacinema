@@ -36,6 +36,9 @@ class HallResource extends Resource
             Number::make('Seat', 'seat')
             ->required(),
 
+            Number::make('Price', 'price')
+            ->required(),
+
             SwitchBoolean::make('Purchased?', 'purchased')
             ->onValue(1)
             ->offValue(0), 

@@ -15,4 +15,9 @@ class Ticket extends Model
     {
         return $this->belongsTo(Session::class);
     }
+
+    public function visitor(): BelongsTo
+    {
+        return $this->belongsTo(Visitor::class);
+    }
 }

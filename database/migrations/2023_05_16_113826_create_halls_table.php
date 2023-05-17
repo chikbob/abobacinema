@@ -13,6 +13,7 @@ return new class extends Migration
             $table->string('name');
             $table->string('row');
             $table->string('seat');
+            $table->integer('price');
             $table->boolean('purchased');
             $table->timestamps();
         });
