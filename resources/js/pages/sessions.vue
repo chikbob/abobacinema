@@ -9,11 +9,13 @@
                 <p class="name__style" style="color: #d0d0d0; margin: 0 0 20px;">{{ film.release_start_at }}</p>
             </div>
         </div>
+        <Pagination :links="film.links"/>
     </PageLayout>
 </template>
 
 <script setup>
 import PageLayout from '@/shared/layouts/page-layout/page-layout.vue';
+import Pagination from '@/shared/components/pagination/pagination.vue'
 import { Link } from '@inertiajs/vue3'
 
 const props = defineProps({
