@@ -2,22 +2,17 @@
 
 namespace App\Http\Controllers\Pages;
 
-use App\Http\Resources\FilmsResource;
-use App\Models\Films;
+use App\Models\Film;
 use Inertia\Inertia;
 use Inertia\Response;
 
 class FilmPageController
 {
-    /**
-     * Film page
-     * @param Films $film
-     * @return Response
-     */
-    public function __invoke(Films $film): Response
+    public function __invoke(Film $film): Response
     {
-        return Inertia::render('films/[id]', [
-            'Film' => FilmsResource::make($film)
+        // dd(Film::paginate(5)->toArray());
+        return Inertia::render('sessions', [
+            'film' => Film::paginate(10)
         ]);
     }
 }

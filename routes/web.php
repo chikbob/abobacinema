@@ -2,6 +2,7 @@
 
 use Inertia\Inertia;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Pages\FilmPageController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,9 +19,9 @@ Route::get('/', function () {
     return Inertia::render('main');
 });
 
-// Route::get('/films/{film}', FilmPageController::class);
+// Route::get('/films', FilmListController::class);
 
-Route::get('/sessions', fn()=>Inertia::render('sessions'));
+Route::get('/sessions', FilmPageController::class);
 
 Route::get('/soon', fn()=>Inertia::render('soon'));
 
