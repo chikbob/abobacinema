@@ -9,7 +9,6 @@
             :key="k"
             :href="link.url"/>
         </div>
-        <div>{{ links.active }}</div>
     </nav>
 </template>
 
@@ -25,7 +24,7 @@ const props = defineProps({
     display: flex;
     justify-content: center; 
 
-    margin: 3rem 0;
+    margin: 2rem 0 3rem;
 
     &-item {
         margin: 0 1rem;

@@ -24,6 +24,7 @@ class FilmFactory extends Factory
             'original_name' => $this->faker->name,
             'duration' => random_int(20,180), 
             'description' => $this->faker->text, 
+            'released' => $this->faker->boolean(),
             'release_start_at' => $this->faker->dateTime, 
             'release_end_at' => $this->faker->dateTime, 
         ];

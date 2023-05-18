@@ -3,18 +3,20 @@
 namespace App\MoonShine\Resources;
 
 use App\Models\Film;
-use MoonShine\Fields\HasOne;
 use MoonShine\Fields\ID;
 use MoonShine\Fields\Date;
+use MoonShine\Fields\Text;
 
 use MoonShine\Fields\Image;
-use MoonShine\Fields\Text;
+use MoonShine\Fields\HasOne;
 use MoonShine\Fields\Number;
 use MoonShine\Fields\Select;
+use MoonShine\Fields\NoInput;
 use MoonShine\Fields\BelongsTo;
 use MoonShine\Resources\Resource;
 use MoonShine\Actions\FiltersAction;
 use Illuminate\Database\Eloquent\Model;
+use MoonShine\Fields\SwitchBoolean;
 
 class FilmResource extends Resource
 {
@@ -28,20 +30,34 @@ class FilmResource extends Resource
 	{
 		return [
 		    ID::make()->sortable(),
-            Text::make('Name', 'name'),
-            Text::make('Original name', 'original_name'),
+            Text::make('Name', 'name')
+            ->required(),
+            Text::make('Original name', 'original_name')
+            ->hideOnIndex()
+            ->required(),
             Image::make('Poster', 'poster')
             ->disk('local')
             ->dir('public')
             ->removable()
             ->allowedExtensions(['jpg', 'jpeg', 'png'])
             ->required(),
-            Number::make('Age', 'age'),
-            Number::make('Year', 'year'),
-            Number::make('Duration', 'duration'),
-            Text::make('Description', 'description'),
-            Date::make('Release start', 'release_start_at'),
+            Number::make('Age', 'age')
+            ->hideOnIndex()
+            ->required(),
+            Number::make('Year', 'year')
+            ->required(),
+            Number::make('Duration', 'duration')
+            ->hideOnIndex()
+            ->required(),
+            Text::make('Description', 'description')
+            ->hideOnIndex()
+            ->required(),
+            SwitchBoolean::make('Released', 'released')
+            ->required(),
+            Date::make('Release start', 'release_start_at')
+            ->nullable(),
             Date::make('Release end', 'release_end_at')
+            ->nullable()
         ];
 	}
 

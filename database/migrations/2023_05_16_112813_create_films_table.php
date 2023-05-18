@@ -20,8 +20,11 @@ return new class extends Migration {
             $table->string('original_name');
             $table->integer('duration');
             $table->text('description');
-            $table->date('release_start_at');
-            $table->date('release_end_at');
+            $table->boolean('released');
+            $table->date('release_start_at')
+            ->nullable();
+            $table->date('release_end_at')
+            ->nullable();
             $table->timestamps();
         });
     }

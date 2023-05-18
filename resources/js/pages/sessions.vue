@@ -2,14 +2,16 @@
     <PageLayout>
         <div class="content">
             <div v-for="film in film.data" :key="film.id" class="movie">
-                <Link :href="`/films/{id}`">
-                <img :src="film.poster" alt="image_poster">
-                </Link>
-                <p class="name__style">{{ film.name }}</p>
-                <p class="name__style" style="color: #d0d0d0; margin: 0 0 20px;">{{ film.release_start_at }}</p>
+                <div v-if="film.released == true" >
+                    <Link :href="`/films/{id}`">
+                        <img :src="film.poster" alt="image_poster">
+                    </Link>
+                    <p class="name__style">{{ film.name }}</p>
+                    <p class="name__style" style="color: #d0d0d0; margin: 0 0 20px;">{{ film.release_start_at }}</p>
+                </div>
             </div>
         </div>
-        <Pagination :links="film.links"/>
+        <Pagination :links="film.links" />
     </PageLayout>
 </template>
 
@@ -29,7 +31,6 @@ const props = defineProps({
     flex-flow: row wrap;
     flex-direction: row;
     justify-content: flex-start;
-    margin-bottom: 50px;
     width: 100%;
 }
 
