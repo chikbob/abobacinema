@@ -17,7 +17,8 @@ class FilmCountryFactory extends Factory
     public function definition(): array
     {
         return [
-
+            "film_id" => \App\Models\Film::factory(),
+            "country" => $this->faker->country,
         ];
     }
 }

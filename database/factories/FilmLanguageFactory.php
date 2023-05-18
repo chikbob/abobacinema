@@ -5,9 +5,9 @@ namespace Database\Factories;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Language>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\FilmLanguage>
  */
-class LanguageFactory extends Factory
+class FilmLanguageFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -17,8 +17,8 @@ class LanguageFactory extends Factory
     public function definition(): array
     {
         return [
-            'key' => $this->faker->languageCode,
-            'value' => $this->faker->languageCode
+            "film_id" => \App\Models\Film::factory(),
+            "language" => $this->faker->languageCode,
         ];
     }
 }

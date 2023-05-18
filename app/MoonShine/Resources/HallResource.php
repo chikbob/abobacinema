@@ -39,11 +39,7 @@ class HallResource extends Resource
             Number::make('Price', 'price')
             ->required(),
 
-            SwitchBoolean::make('Purchased?', 'purchased')
-            ->onValue(1)
-            ->offValue(0), 
-
-            // NoInput::make() Сделать через ноуинпут что когда кто-то купил билет на эти места то было значение true
+            NoInput::make('Purchased?', 'purchased')->boolean(hideTrue: false, hideFalse: false),
         ];
 	}
 

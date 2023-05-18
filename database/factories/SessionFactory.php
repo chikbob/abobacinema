@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Factories\Factory;
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Session>
  */
-class FilmSessionFactory extends Factory
+class SessionFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -17,7 +17,9 @@ class FilmSessionFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            "film_id" => \App\Models\Film::factory(),
+            "hall_id" => \App\Models\Hall::factory(),
+            "time" => $this->faker->dateTime($min='now'),
         ];
     }
 }

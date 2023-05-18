@@ -17,7 +17,8 @@ class FilmDirectorFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            "film_id" => \App\Models\Film::factory(),
+            "director" => $this->faker->name,
         ];
     }
 }

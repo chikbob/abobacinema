@@ -30,7 +30,7 @@ class TicketResource extends Resource
                     ])
                     ->columnSpan(5),
                     Column::make([
-                        BelongsTo::make('Visitor', 'visitor', fn($item) => $item->name)
+                        BelongsTo::make('Visitor', 'visitor', fn($item) => 'Name: '. $item->name.' | Telephone: '. $item->telephone.' | E-mail: '. $item->email) 
                         ->searchable(),
                     ])
                     ->columnSpan(5),

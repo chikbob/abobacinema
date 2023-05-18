@@ -18,8 +18,8 @@ class VisitorFactory extends Factory
     {
         return [
             'name' => $this->faker->name,
-            'phone' => $this->faker->phoneNumber,
-            'email' => $this->faker->email,
+            'telephone' => $this->faker->phoneNumber,
+            'email' => $this->faker->unique()->email,
         ];
     }
 }

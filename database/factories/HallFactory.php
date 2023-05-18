@@ -17,7 +17,11 @@ class HallFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'name' => $this->faker->name,
+            'row' => $this->faker->numberBetween(1,12),
+            'seat' => $this->faker->numberBetween(1,30),
+            'price' => $this->faker->numberBetween(100,1300),
+            'purchased' => $this->faker->boolean(),
         ];
     }
 }
