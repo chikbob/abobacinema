@@ -7,12 +7,12 @@ use Inertia\Inertia;
 use Inertia\Response;
 use Illuminate\Http\Request;
 
-class FilmPageController
+class SoonController
 {
     public function __invoke(Film $film, Request $request): Response
     {
-        return Inertia::render('sessions', [
-            'film' => Film::where('released','=',$request->released || false)->paginate(10),
+        return Inertia::render('soon', [
+            'soon' => Film::where('released','=',$request->released || true)->paginate(10)
         ]);
     }
 }

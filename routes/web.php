@@ -3,6 +3,7 @@
 use Inertia\Inertia;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Pages\FilmPageController;
+use App\Http\Controllers\Pages\SoonController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,6 +24,6 @@ Route::get('/', function () {
 
 Route::get('/sessions', FilmPageController::class);
 
-Route::get('/soon', fn()=>Inertia::render('soon'));
+Route::get('/soon', SoonController::class);
 
 Route::get('/contacts', fn()=>Inertia::render('contacts'));

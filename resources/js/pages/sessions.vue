@@ -9,12 +9,14 @@
                 <p class="name__style" style="color: #d0d0d0; margin: 0 0 20px;">{{ film.release_start_at }}</p>
             </div>
         </div>
+        <!-- <input type="checkbox" v-model="form.released" /> -->
         <Pagination :links="film.links" />
     </PageLayout>
 </template>
 
 <script setup>
-import {ref, onMounted} from 'vue'
+import { ref, reactive, watch } from 'vue'
+import { Inertia } from '@inertiajs/inertia'
 import PageLayout from '@/shared/layouts/page-layout/page-layout.vue';
 import Pagination from '@/shared/components/pagination/pagination.vue'
 import { Link } from '@inertiajs/vue3'
@@ -25,10 +27,19 @@ const props = defineProps({
     film: Array,
 })
 
-onMounted(() => {
-    console.log(props.film)
-    console.log(releasedFilms.value)
+const form = reactive({
+    released: false,
 })
+watch(form, () => {
+    submit()
+}, {
+    deep: true
+})
+
+function submit() {
+    Inertia.get('/sessions', form)
+}
+
 </script>
 
 <style lang="scss" scoped>
