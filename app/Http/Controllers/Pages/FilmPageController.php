@@ -5,14 +5,14 @@ namespace App\Http\Controllers\Pages;
 use App\Models\Film;
 use Inertia\Inertia;
 use Inertia\Response;
+use Illuminate\Http\Request;
 
 class FilmPageController
 {
-    public function __invoke(Film $film): Response
+    public function __invoke(Film $film, Request $request): Response
     {
-        // dd(Film::paginate(5)->toArray());
         return Inertia::render('sessions', [
-            'film' => Film::paginate(10)
+            'film' => Film::where('released','=',true)->paginate(10)
         ]);
     }
 }
