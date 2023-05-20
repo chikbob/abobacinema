@@ -15,6 +15,7 @@
         "@inertiajs/inertia-vue3": "^0.6.0",
         "@inertiajs/vue3": "^1.0.6",
         "@vitejs/plugin-vue": "^4.2.1",
+        "moment": "^2.29.4",
         "pinia": "^2.0.35",
         "pinia-class-store": "^1.1.1",
         "vue": "^3.2.47",

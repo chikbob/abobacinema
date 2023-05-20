@@ -2,7 +2,7 @@
     <PageLayout>
         <div class="content">
             <div v-for="film in films" :key="film.id" class="movie">
-                <Link :href="`/films/{id}`">
+                <Link :href="`/films/${film.id}`">
                 <img :src="film.poster" alt="image_poster">
                 </Link>
                 <p class="name__style">{{ film.name }}</p>
@@ -19,7 +19,6 @@ import { Inertia } from '@inertiajs/inertia'
 import PageLayout from '@/shared/layouts/page-layout/page-layout.vue';
 import Pagination from '@/shared/components/pagination/pagination.vue'
 import { Link } from '@inertiajs/vue3'
-console.log(props.soon)
 
 let films = ref(props.soon.data)
 

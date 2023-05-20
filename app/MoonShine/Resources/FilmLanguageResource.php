@@ -21,7 +21,8 @@ class FilmLanguageResource extends Resource
 	{
 		return [
 		    ID::make()->sortable(),
-            BelongsTo::make('Film', 'film', fn($item) => $item->id .' | '. $item->name),
+            BelongsTo::make('Film', 'film', fn($item) => $item->id .' | '. $item->name)
+            ->searchable(),
             Text::make('Language', 'language')
         ];
 	}

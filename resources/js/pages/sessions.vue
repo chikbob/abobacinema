@@ -2,7 +2,7 @@
     <PageLayout>
         <div class="content">
             <div v-for="film in releasedFilms" :key="film.id" class="movie">
-                <Link :href="`/films/{id}`">
+                <Link :href="`/films/${film.id}`">
                 <img :src="film.poster" alt="image_poster">
                 </Link>
                 <p class="name__style">{{ film.name }}</p>

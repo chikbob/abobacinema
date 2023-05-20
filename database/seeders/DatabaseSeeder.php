@@ -9,6 +9,7 @@ use App\Models\Visitor;
 use App\Models\FilmStudio;
 use App\Models\FilmCountry;
 use App\Models\FilmDirector;
+use App\Models\FilmGenre;
 use App\Models\FilmLanguage;
 use App\Models\Session;
 use App\Models\Ticket;
@@ -35,6 +36,7 @@ class DatabaseSeeder extends Seeder
         FilmDirector::factory(10)->create();
         FilmStudio::factory(10)->create();
         FilmLanguage::factory(10)->create();
+        FilmGenre::factory(10)->create();
         // Session::factory(10)->create();
         Ticket::factory(10)->create();
     }

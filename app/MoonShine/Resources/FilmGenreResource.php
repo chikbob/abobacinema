@@ -3,7 +3,7 @@
 namespace App\MoonShine\Resources;
 
 use MoonShine\Fields\ID;
-use App\Models\FilmStudio;
+use App\Models\FilmGenre;
 
 use MoonShine\Fields\Text;
 use MoonShine\Fields\BelongsTo;
@@ -11,11 +11,11 @@ use MoonShine\Resources\Resource;
 use MoonShine\Actions\FiltersAction;
 use Illuminate\Database\Eloquent\Model;
 
-class FilmStudioResource extends Resource
+class FilmGenreResource extends Resource
 {
-	public static string $model = FilmStudio::class;
+	public static string $model = FilmGenre::class;
 
-	public static string $title = 'FilmStudio';
+	public static string $title = 'FilmGenre';
 
 	public function fields(): array
 	{
@@ -23,7 +23,7 @@ class FilmStudioResource extends Resource
 		    ID::make()->sortable(),
             BelongsTo::make('Film', 'film', fn($item) => $item->id .' | '. $item->name)
             ->searchable(),
-            Text::make('Studio', 'studio')
+            Text::make('Genre', 'genre')
         ];
 	}
 

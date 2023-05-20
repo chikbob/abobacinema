@@ -16,6 +16,7 @@ use App\MoonShine\Resources\TicketResource;
 use App\MoonShine\Resources\SessionResource;
 use App\MoonShine\Resources\VisitorResource;
 use App\MoonShine\Resources\DirectorsResource;
+use App\MoonShine\Resources\FilmGenreResource;
 use MoonShine\Resources\MoonShineUserResource;
 use App\MoonShine\Resources\FilmStudioResource;
 use App\MoonShine\Resources\FilmCountryResource;
@@ -42,6 +43,7 @@ class MoonShineServiceProvider extends ServiceProvider
                 MenuItem::make('Film Countries', new FilmCountryResource(), 'heroicons.globe-europe-africa'),
                 MenuItem::make('Film Studios', new FilmStudioResource(), 'heroicons.video-camera'),
                 MenuItem::make('Film Languages', new FilmLanguageResource(), 'heroicons.language'),
+                MenuItem::make('Film Genres', new FilmGenreResource(), 'heroicons.language'),
             ])
             ->icon('heroicons.view-columns'),
 

@@ -1,29 +1,30 @@
 <template>
-    <div :class="cnFooter('orangeLine')" style="margin-top: 1.8rem"></div>
-    <nav :class="cnFooter('nav')">
-        
-        <div :class="cnFooter('nav__container')">
-            <Link :class="cnFooter('nav__container-textHigh')" href="/sessions">Сеанси</Link>
-            <Link :class="cnFooter('nav__container-textHigh')" href="/soon">Скоро у прокаті</Link>
-            <Link :class="cnFooter('nav__container-textHigh')" href="/contacts">Контакти</Link>
-        </div>
-        <div :class="cnFooter('info')">
-            <div :class="cnFooter('info__container')">
-                <div :class="cnFooter('info__container-textHigh')">Каса: (099) 123-4567</div>
-                <div :class="cnFooter('info__container-textHigh')">abobacinemahelp@gmail.com</div>
-                <div :class="cnFooter('info__container-textHigh')">Служба підтримки: (099) 765-43-21</div>
+    <div :class="cnFooter('orangeLine')" style="margin-top: 14rem">
+        <nav :class="cnFooter('nav')">
+
+            <div :class="cnFooter('nav__container')">
+                <Link :class="cnFooter('nav__container-textHigh')" href="/sessions">Сеанси</Link>
+                <Link :class="cnFooter('nav__container-textHigh')" href="/soon">Скоро у прокаті</Link>
+                <Link :class="cnFooter('nav__container-textHigh')" href="/contacts">Контакти</Link>
             </div>
-            <div :class="cnFooter('info__container')">
-                <div :class="cnFooter('info__container-text')">Ми відкриті кожного дня з 10:00 до 22:00</div>
-                <div :class="cnFooter('info__container-text')">ТРЦ "Forum Lviv", вулиця Під Дубом,<br> 7Б, Львів,
-                    Львівська область, Украина, 79000</div>
-                <div :class="cnFooter('info__container-text')">Працює кожного дня з 10:00 до 18:00</div>
+            <div :class="cnFooter('info')">
+                <div :class="cnFooter('info__container')">
+                    <div :class="cnFooter('info__container-textHigh')">Каса: (099) 123-4567</div>
+                    <div :class="cnFooter('info__container-textHigh')">abobacinemahelp@gmail.com</div>
+                    <div :class="cnFooter('info__container-textHigh')">Служба підтримки: (099) 765-43-21</div>
+                </div>
+                <div :class="cnFooter('info__container')">
+                    <div :class="cnFooter('info__container-text')">Ми відкриті кожного дня з 10:00 до 22:00</div>
+                    <div :class="cnFooter('info__container-text')">ТРЦ "Forum Lviv", вулиця Під Дубом,<br> 7Б, Львів,
+                        Львівська область, Украина, 79000</div>
+                    <div :class="cnFooter('info__container-text')">Працює кожного дня з 10:00 до 18:00</div>
+                </div>
+                <div :class="cnFooter('info__container')">
+                    <div :class="cnFooter('info__container-textException')">© 2023 Кінотеатр «AbobaCinema»</div>
+                </div>
             </div>
-            <div :class="cnFooter('info__container')">
-                <div :class="cnFooter('info__container-textException')">© 2023 Кінотеатр «AbobaCinema»</div>
-            </div>
-        </div>
-    </nav>
+        </nav>
+    </div>
 </template>
 
 <script setup>

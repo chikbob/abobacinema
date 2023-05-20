@@ -10,10 +10,10 @@ return new class extends Migration
 {
     public function up(): void
     {
-        Schema::create('film_studios', function (Blueprint $table) {
+        Schema::create('film_genres', function (Blueprint $table) {
             $table->id();
             $table->foreignIdFor(Film::class);
-            $table->string('studio');
+            $table->string('genre');
             $table->timestamps();
         });
     }
