@@ -1,6 +1,6 @@
 <template>
     <div :class="cnFilmScreen('preview')">
-        <img :class="cnFilmScreen('preview-img')" :src="model.film.poster" alt="image_poster">
+        <img :class="cnFilmScreen('preview-img')" :src="`${model.film.poster}`" :alt="`${model.film.poster}`">
         <div :class="cnFilmScreen('preview-title')">
             {{ model.film.name }}
         </div>

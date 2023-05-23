@@ -2,34 +2,25 @@
 
 namespace App\MoonShine\Resources;
 
-use App\Models\Session;
 use MoonShine\Fields\ID;
-use MoonShine\Fields\Date;
 use MoonShine\Fields\Text;
-use MoonShine\Fields\BelongsTo;
+
+use App\Models\HallGenerator;
 use MoonShine\Resources\Resource;
 use MoonShine\Actions\FiltersAction;
 use Illuminate\Database\Eloquent\Model;
 
-class SessionResource extends Resource
+class HallGeneratorResource extends Resource
 {
-	public static string $model = Session::class;
+	public static string $model = HallGenerator::class;
 
-	public static string $title = 'Sessions';
+	public static string $title = 'HallGenerator';
 
 	public function fields(): array
 	{
 		return [
 		    ID::make()->sortable(),
-            BelongsTo::make('Film', 'film', fn($item) => $item->id .' | '. $item->name)
-            ->searchable()
-            ->required(),
-            BelongsTo::make('Hall', 'hall', fn($item) => $item->id .' | '. $item->hallGenerator->name)
-            ->searchable()
-            ->required(),
-            Text::make('Time', 'time')
-            ->mask("99:99")
-            ->required(),
+            Text::make('Hall name', 'name'),
         ];
 	}
 

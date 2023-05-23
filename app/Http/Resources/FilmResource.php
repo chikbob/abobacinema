@@ -18,9 +18,10 @@ class FilmResource extends JsonResource
             ...parent::toArray($request),
             'directors' => DirectorResource::collection($this->directors),
             'languages'=> LanguageResource::collection($this->languages),
-            'countries' => CountryResource::collection($this->countries),
             'genres' => GenreResource::collection($this->genres),
+            'countries' => CountryResource::collection($this->countries),
             'studios' => StudioResource::collection($this->studios),
+            'sessions' => SessionResource::collection($this->sessions),
         ];
     }
 }

@@ -1,9 +1,5 @@
 <?php
 
-use App\Models\Country;
-use App\Models\Director;
-use App\Models\Language;
-use App\Models\Studio;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;

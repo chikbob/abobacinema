@@ -2,7 +2,6 @@
 
 namespace App\Models;
 
-use App\Models\FilmDirector;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
@@ -28,5 +27,9 @@ class Film extends Model
 
     public function studios() {
         return $this->hasMany(FilmStudio::class);
+    }
+
+    public function sessions() {
+        return $this->hasMany(Session::class);
     }
 }

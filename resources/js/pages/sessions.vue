@@ -9,7 +9,6 @@
                 <p class="name__style" style="color: #d0d0d0; margin: 0 0 20px;">{{ film.release_start_at }}</p>
             </div>
         </div>
-        <!-- <input type="checkbox" v-model="form.released" /> -->
         <Pagination :links="film.links" />
     </PageLayout>
 </template>
@@ -22,6 +21,9 @@ import Pagination from '@/shared/components/pagination/pagination.vue'
 import { Link } from '@inertiajs/vue3'
 
 let releasedFilms = ref(props.film.data)
+
+
+
 
 const props = defineProps({
     film: Array,

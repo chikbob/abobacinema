@@ -13,7 +13,7 @@ return new class extends Migration {
             $table->id();
             $table->foreignIdFor(Film::class);
             $table->foreignIdFor(Hall::class);
-            $table->dateTime('time');
+            $table->text('time');
             $table->timestamps();
         });
     }

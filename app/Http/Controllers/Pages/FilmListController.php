@@ -13,7 +13,7 @@ class FilmListController
     public function __invoke(Film $film, Request $request): Response
     {
         return Inertia::render('films/[id]', [
-            'film' => FilmResource::make($film)
+            'film' => FilmResource::make($film),
         ]);
     }
 }

@@ -4,25 +4,30 @@
             <div :class="cnFilmScreen('description-item_orange')">Вік:</div>{{ model.film.age }}+
         </div>
         <div :class="cnFilmScreen('description-item')">
-            <div :class="cnFilmScreen('description-item_orange')">{{ textDirector }}</div>{{ checkArray(model.film.directors, 'director').toString()}}
+            <div :class="cnFilmScreen('description-item_orange')">{{ textDirector }}</div>{{
+                checkArray(model.film.directors, 'director').toString() }}
         </div>
         <div :class="cnFilmScreen('description-item')">
             <div :class="cnFilmScreen('description-item_orange')">Рік виходу:</div>{{ model.film.year }}
         </div>
         <div :class="cnFilmScreen('description-item')">
-            <div :class="cnFilmScreen('description-item_orange')">{{ textLanguage }}</div>{{ checkArray(model.film.languages, 'language').toString()}}
+            <div :class="cnFilmScreen('description-item_orange')">{{ textLanguage }}</div>{{
+                checkArray(model.film.languages, 'language').toString() }}
         </div>
         <div :class="cnFilmScreen('description-item')">
-            <div :class="cnFilmScreen('description-item_orange')">{{ textGenre }}</div>{{ checkArray(model.film.genres, 'genre').toString()}}
-        </div>
-        <div :class="cnFilmScreen('description-item')"> 
-            <div :class="cnFilmScreen('description-item_orange')">Тривалість:</div>{{ checkNull(model.film.duration/60) }} hours  {{ Math.floor((model.film.duration%60)) }} minutes
+            <div :class="cnFilmScreen('description-item_orange')">{{ textGenre }}</div>{{ checkArray(model.film.genres,
+                'genre').toString() }}
         </div>
         <div :class="cnFilmScreen('description-item')">
-            <div :class="cnFilmScreen('description-item_orange')">{{ textCountry }}</div>{{ (checkArray(model.film.countries, 'country')).toString() }}
+            <div :class="cnFilmScreen('description-item_orange')">Тривалість:</div>{{ checkNull(model.film.duration) }}
         </div>
         <div :class="cnFilmScreen('description-item')">
-            <div :class="cnFilmScreen('description-item_orange')">{{ textStudio }}</div>{{ (checkArray(model.film.studios, 'studio')).toString() }}
+            <div :class="cnFilmScreen('description-item_orange')">{{ textCountry }}</div>{{
+                (checkArray(model.film.countries, 'country')).toString() }}
+        </div>
+        <div :class="cnFilmScreen('description-item')">
+            <div :class="cnFilmScreen('description-item_orange')">{{ textStudio }}</div>{{ (checkArray(model.film.studios,
+                'studio')).toString() }}
         </div>
     </div>
 </template>
@@ -39,10 +44,8 @@ let textLanguage = ref("Мова:")
 let textGenre = ref("Жанр:")
 
 function checkNull(time) {
-    if(time == " ") {
-        time = 0
-    }
-    time = Math.floor(time)
+    time = time.toString().replace(/(\d{1,2})(\d{2})$/, "$1:$2");
+    console.log(time)
     return time
 }
 

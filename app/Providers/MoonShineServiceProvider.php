@@ -12,19 +12,18 @@ use MoonShine\Menu\MenuGroup;
 use Illuminate\Support\ServiceProvider;
 use App\MoonShine\Resources\FilmResource;
 use App\MoonShine\Resources\HallResource;
+use App\MoonShine\Resources\SeatResource;
 use App\MoonShine\Resources\TicketResource;
 use App\MoonShine\Resources\SessionResource;
 use App\MoonShine\Resources\VisitorResource;
-use App\MoonShine\Resources\DirectorsResource;
 use App\MoonShine\Resources\FilmGenreResource;
 use MoonShine\Resources\MoonShineUserResource;
 use App\MoonShine\Resources\FilmStudioResource;
 use App\MoonShine\Resources\FilmCountryResource;
 use App\MoonShine\Resources\FilmDirectorResource;
 use App\MoonShine\Resources\FilmLanguageResource;
+use App\MoonShine\Resources\HallGeneratorResource;
 use MoonShine\Resources\MoonShineUserRoleResource;
-use App\MoonShine\Resources\ProducerStudioResource;
-use App\MoonShine\Resources\ProducerCountryResource;
 
 class MoonShineServiceProvider extends ServiceProvider
 {
@@ -43,14 +42,21 @@ class MoonShineServiceProvider extends ServiceProvider
                 MenuItem::make('Film Countries', new FilmCountryResource(), 'heroicons.globe-europe-africa'),
                 MenuItem::make('Film Studios', new FilmStudioResource(), 'heroicons.video-camera'),
                 MenuItem::make('Film Languages', new FilmLanguageResource(), 'heroicons.language'),
-                MenuItem::make('Film Genres', new FilmGenreResource(), 'heroicons.language'),
+                MenuItem::make('Film Genres', new FilmGenreResource(), 'heroicons.musical-note'),
             ])
             ->icon('heroicons.view-columns'),
 
             MenuItem::make('Sessions', new SessionResource(), 'heroicons.clock'),
+
+            MenuGroup::make('Halls', [
             MenuItem::make('Halls', new HallResource(), 'heroicons.tv'),
+            MenuItem::make('Hall names', new HallGeneratorResource(), 'heroicons.tv'),
+            ])
+            ->icon('heroicons.view-columns'),
+
             MenuItem::make('Visitors', new VisitorResource(), 'heroicons.user-group')
             ->badge(fn() => Visitor::query()->count()),
+
             MenuItem::make('Tickets', new TicketResource(), 'heroicons.ticket')
             ->badge(fn() => Ticket::query()->count()),
         ]);

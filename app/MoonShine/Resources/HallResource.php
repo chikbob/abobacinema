@@ -7,14 +7,11 @@ use MoonShine\Fields\ID;
 
 use MoonShine\Fields\Text;
 use MoonShine\Fields\Number;
-use MoonShine\Fields\NoInput;
-use MoonShine\Decorations\Grid;
-use MoonShine\Decorations\Block;
 use MoonShine\Resources\Resource;
 use MoonShine\Fields\SwitchBoolean;
 use MoonShine\Actions\FiltersAction;
 use Illuminate\Database\Eloquent\Model;
-use MoonShine\Decorations\Column;
+use MoonShine\Fields\BelongsTo;
 
 class HallResource extends Resource
 {
@@ -26,20 +23,22 @@ class HallResource extends Resource
 	{
 		return [
 		    ID::make()->sortable(),
-
-            Text::make('Hall_name', 'name')
-            ->required(),
-
+            BelongsTo::make('Name', 'hall_generator_id', fn($item) => $item->id .' | '. $item->name)
+            ->searchable(),
             Number::make('Row', 'row')
+            ->min(1)
+            ->max(25)
             ->required(),
-
             Number::make('Seat', 'seat')
+            ->min(1)
+            ->max(30)
             ->required(),
-
             Number::make('Price', 'price')
+            ->min(1)
+            ->max(99999)
             ->required(),
-
-            NoInput::make('Purchased?', 'purchased')->boolean(hideTrue: false, hideFalse: false),
+            SwitchBoolean::make('Purchased', 'purchased')
+            ->required(),
         ];
 	}
 

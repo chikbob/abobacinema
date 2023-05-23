@@ -17,6 +17,7 @@ use MoonShine\Resources\Resource;
 use MoonShine\Actions\FiltersAction;
 use Illuminate\Database\Eloquent\Model;
 use MoonShine\Fields\SwitchBoolean;
+use MoonShine\Fields\Url;
 
 class FilmResource extends Resource
 {
@@ -35,11 +36,8 @@ class FilmResource extends Resource
             Text::make('Original name', 'original_name')
             ->hideOnIndex()
             ->required(),
-            Image::make('Poster', 'poster')
-            ->disk('local')
-            ->dir('public')
-            ->removable()
-            ->allowedExtensions(['jpg', 'jpeg', 'png'])
+            Url::make('Poster', 'poster')
+            ->hideOnIndex()
             ->required(),
             Number::make('Age', 'age')
             ->hideOnIndex()
@@ -52,8 +50,7 @@ class FilmResource extends Resource
             Text::make('Description', 'description')
             ->hideOnIndex()
             ->required(),
-            SwitchBoolean::make('Released', 'released')
-            ->required(),
+            SwitchBoolean::make('Released', 'released'),
             Date::make('Release start', 'release_start_at')
             ->nullable(),
             Date::make('Release end', 'release_end_at')

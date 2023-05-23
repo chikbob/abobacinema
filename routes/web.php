@@ -4,6 +4,7 @@ use Inertia\Inertia;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Pages\FilmListController;
 use App\Http\Controllers\Pages\FilmPageController;
+use App\Http\Controllers\Pages\HallController;
 use App\Http\Controllers\Pages\SoonController;
 
 /*
@@ -22,6 +23,8 @@ Route::get('/', function () {
 });
 
 Route::get('/films/{film}', FilmListController::class);
+
+Route::get('/halls/{hall}', HallController::class);
 
 Route::get('/sessions', FilmPageController::class);
 

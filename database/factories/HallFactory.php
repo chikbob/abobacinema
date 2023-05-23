@@ -17,7 +17,7 @@ class HallFactory extends Factory
     public function definition(): array
     {
         return [
-            'name' => $this->faker->name,
+            "hall_generator_id" => \App\Models\HallGenerator::factory(),
             'row' => $this->faker->numberBetween(1,12),
             'seat' => $this->faker->numberBetween(1,30),
             'price' => $this->faker->numberBetween(100,1300),
