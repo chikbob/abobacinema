@@ -14,6 +14,10 @@ return new class extends Migration
         Schema::create('hall_generators', function (Blueprint $table) {
             $table->id();
             $table->text('name');
+            $table->integer('row');
+            $table->integer('seat');
+            $table->integer('price');
+            $table->boolean('purchased');
             $table->timestamps();
         });
     }

@@ -13,6 +13,7 @@ createInertiaApp({
         createApp({render: () => h(App, props)})
             .use(plugin)
             .use(pinia)
+            .use(VueCustomTooltip)
             .mount(el)
     },
 });

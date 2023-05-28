@@ -12,7 +12,6 @@ const props = defineProps({
 
 const model = filmModel();
 model.init(props.film.data);
-
 </script>
 
 <style lang="scss" scoped>

@@ -10,6 +10,7 @@
             </div>
         </div>
         <Pagination :links="film.links" />
+        {{ props.film }}
     </PageLayout>
 </template>
 
@@ -21,9 +22,6 @@ import Pagination from '@/shared/components/pagination/pagination.vue'
 import { Link } from '@inertiajs/vue3'
 
 let releasedFilms = ref(props.film.data)
-
-
-
 
 const props = defineProps({
     film: Array,

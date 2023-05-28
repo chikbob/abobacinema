@@ -2,6 +2,7 @@
 
 namespace App\Http\Resources;
 
+use App\Models\Hall;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
 
@@ -17,7 +18,7 @@ class SessionResource extends JsonResource
         return [
             ...parent::toArray($request),
             'times' => $this->time,
-            'halls' => $this->hall_id,
+            'halls' => Hall::all(),
         ];
     }
 }

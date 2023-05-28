@@ -11,6 +11,7 @@ use App\Models\FilmCountry;
 use App\Models\FilmDirector;
 use App\Models\FilmGenre;
 use App\Models\FilmLanguage;
+use App\Models\HallGenerator;
 use App\Models\Session;
 use App\Models\Ticket;
 use Illuminate\Database\Seeder;

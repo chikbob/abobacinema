@@ -45,7 +45,6 @@ let textGenre = ref("Жанр:")
 
 function checkNull(time) {
     time = time.toString().replace(/(\d{1,2})(\d{2})$/, "$1:$2");
-    console.log(time)
     return time
 }
 
@@ -69,8 +68,6 @@ function checkArray(array, string) {
 }
 
 const model = filmModel();
-
-console.log(model.film)
 </script>
 
 <style lang="scss" scoped>

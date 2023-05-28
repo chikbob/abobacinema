@@ -5,10 +5,7 @@ namespace App\MoonShine\Resources;
 use App\Models\Hall;
 use MoonShine\Fields\ID;
 
-use MoonShine\Fields\Text;
-use MoonShine\Fields\Number;
 use MoonShine\Resources\Resource;
-use MoonShine\Fields\SwitchBoolean;
 use MoonShine\Actions\FiltersAction;
 use Illuminate\Database\Eloquent\Model;
 use MoonShine\Fields\BelongsTo;
@@ -23,22 +20,10 @@ class HallResource extends Resource
 	{
 		return [
 		    ID::make()->sortable(),
-            BelongsTo::make('Name', 'hall_generator_id', fn($item) => $item->id .' | '. $item->name)
+            BelongsTo::make('Hall', 'hall_generator_id', fn($item) => $item->id .' | '. $item->name .' | Row: '. $item->row .' | Seat: '. $item->seat)
             ->searchable(),
-            Number::make('Row', 'row')
-            ->min(1)
-            ->max(25)
-            ->required(),
-            Number::make('Seat', 'seat')
-            ->min(1)
-            ->max(30)
-            ->required(),
-            Number::make('Price', 'price')
-            ->min(1)
-            ->max(99999)
-            ->required(),
-            SwitchBoolean::make('Purchased', 'purchased')
-            ->required(),
+            BelongsTo::make('Session', 'session_id', fn($item) => $item->id .' | Film: '. $item->film->name .' | Time: '. $item->time)
+            ->searchable(),
         ];
 	}
 

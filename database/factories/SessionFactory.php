@@ -18,7 +18,6 @@ class SessionFactory extends Factory
     {
         return [
             "film_id" => \App\Models\Film::factory(),
-            "hall_id" => \App\Models\Hall::factory(),
             "time" => $this->faker->date('H:i', rand(1,54000)),
         ];
     }

@@ -12,7 +12,6 @@ return new class extends Migration {
         Schema::create('sessions', function (Blueprint $table) {
             $table->id();
             $table->foreignIdFor(Film::class);
-            $table->foreignIdFor(Hall::class);
             $table->text('time');
             $table->timestamps();
         });

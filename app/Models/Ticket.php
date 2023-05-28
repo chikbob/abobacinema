@@ -11,9 +11,9 @@ class Ticket extends Model
 {
     use HasFactory;
 
-    public function session(): BelongsTo
+    public function hall(): BelongsTo
     {
-        return $this->belongsTo(Session::class);
+        return $this->belongsTo(Hall::class);
     }
 
     public function visitor(): BelongsTo

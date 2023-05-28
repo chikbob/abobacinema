@@ -25,7 +25,7 @@ class TicketResource extends Resource
 		    ID::make()->sortable(),
                 Grid::make([
                     Column::make([
-                        BelongsTo::make('Session', 'session', fn($item) => 'Film: '. $item->film->name .' | Time: '. $item->time.' | Price: '. $item->hall->price)
+                        BelongsTo::make('Hall', 'hall',)
                         ->searchable(),
                     ])
                     ->columnSpan(5),

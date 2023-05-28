@@ -24,9 +24,6 @@ class SessionResource extends Resource
             BelongsTo::make('Film', 'film', fn($item) => $item->id .' | '. $item->name)
             ->searchable()
             ->required(),
-            BelongsTo::make('Hall', 'hall', fn($item) => $item->id .' | '. $item->hallGenerator->name)
-            ->searchable()
-            ->required(),
             Text::make('Time', 'time')
             ->mask("99:99")
             ->required(),
