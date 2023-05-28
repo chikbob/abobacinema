@@ -7,12 +7,14 @@
             <div :class="cnFilmScreen('sessions_block')">
                 <div v-for="session in sessionsArray" :key="session.id">
                     <div v-for="hall in session.halls" :key="hall.id">
-                        <!-- <div v-if=""> -->
-                            {{ session }}
-                            <Link :class="cnFilmScreen('sessions_block-time')" :href="`/halls/${hall.id}`">
+                        <div v-if="hall.session_id == session.id">
+                            <Link :class="cnFilmScreen('sessions_block-time')" :href="`/halls/${hall.session_id}`">
                             {{ session.times.toString() }}
                             </Link>
-                        <!-- </div> -->
+                        </div>
+                        <div v-else>
+
+                        </div>
                     </div>
                 </div>
             </div>
@@ -31,7 +33,6 @@ import { Link } from '@inertiajs/vue3'
 
 const model = filmModel();
 let sessionsArray = ref(model.film.sessions)
-let hallsArray = ref(model.film.sessions)
 </script>
 
 <style lang="scss" scoped>

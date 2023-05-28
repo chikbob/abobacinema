@@ -17,7 +17,7 @@ class TicketFactory extends Factory
     public function definition(): array
     {
         return [
-            "session_id" => \App\Models\Session::factory(),
+            "hall_id" => \App\Models\Hall::factory(),
             "visitor_id" => \App\Models\Visitor::factory(),
         ];
     }

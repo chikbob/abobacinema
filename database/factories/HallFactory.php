@@ -19,10 +19,6 @@ class HallFactory extends Factory
         return [
             "hall_generator_id" => \App\Models\HallGenerator::factory(),
             "session_id" => \App\Models\Session::factory(),
-            'row' => $this->faker->numberBetween(1,12),
-            'seat' => $this->faker->numberBetween(1,30),
-            'price' => $this->faker->numberBetween(100,1300),
-            'purchased' => $this->faker->boolean(),
         ];
     }
 }

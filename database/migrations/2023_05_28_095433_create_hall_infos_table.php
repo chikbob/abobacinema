@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Hall;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -11,9 +12,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('hall_generators', function (Blueprint $table) {
+        Schema::create('hall_infos', function (Blueprint $table) {
             $table->id();
-            $table->text('name');
+            $table->foreignIdFor(Hall::class);
+            $table->integer('row');
+            $table->integer('seat');
+            $table->integer('price');
+            $table->boolean('purchased')
+            ->default(0);
             $table->timestamps();
         });
     }
@@ -23,6 +29,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('hall_generators');
+        Schema::dropIfExists('hall_infos');
     }
 };

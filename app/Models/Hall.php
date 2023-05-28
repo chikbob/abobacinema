@@ -26,4 +26,9 @@ class Hall extends Model
         return $this->belongsTo(HallGenerator::class);
     }
 
+    public function hallInfo()
+    {
+        return $this->belongsTo(HallInfo::class);
+    }
+
 }

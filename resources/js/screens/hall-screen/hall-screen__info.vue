@@ -366,8 +366,9 @@ const modelFilm = filmModel();
 const film = modelFilm.film.films
 const sessions = modelFilm.film.sessionsALL
 
-const halls = modelFilm.film.hallInfo
-const hallNames = modelFilm.film.hallGeneratoInfo
+const halls = modelFilm.film.hallName
+const hallNames = modelFilm.film.hallGeneratorInfo
+const hallInfo = modelFilm.film.hallInfo
 
 let hallName = ref()
 let mergeFilm = ref([])
@@ -387,10 +388,15 @@ for (let indexSession = 0; indexSession < sessions.length; ++indexSession) {
                     if (valueHall.session_id == valueSession.id) {
                         for (let indexHallGenerator = 0; indexHallGenerator < hallNames.length; ++indexHallGenerator) {
                             const valueHallGenerator = hallNames[indexHallGenerator]
-                            if (valueHall.hall_generator_id == valueHallGenerator.id) {
-                                hallName = valueHallGenerator.name
-                                arrayHallGenerator = [valueHallGenerator.row, valueHallGenerator.seat, valueHallGenerator.price, valueHallGenerator.purchased]
-                                mergeArrayHallGenerator.value.push(arrayHallGenerator)
+                            if (valueFilm.id == valueSession.film_id) {
+                                for (let indexHallInfo = 0; indexHallInfo < hallInfo.length; ++indexHallInfo) {
+                                    const valueHallInfo = hallInfo[indexHallInfo]
+                                    if (valueHallInfo.hall_id == valueHall.id) {
+                                        arrayHallGenerator = [valueHallInfo.row, valueHallInfo.seat, valueHallInfo.price, valueHallInfo.purchased]
+                                        mergeArrayHallGenerator.value.push(arrayHallGenerator)
+                                        hallName = valueHallGenerator.name
+                                    }
+                                }
                             }
                         }
                     }

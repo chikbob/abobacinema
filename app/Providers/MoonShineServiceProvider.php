@@ -12,10 +12,10 @@ use MoonShine\Menu\MenuGroup;
 use Illuminate\Support\ServiceProvider;
 use App\MoonShine\Resources\FilmResource;
 use App\MoonShine\Resources\HallResource;
-use App\MoonShine\Resources\SeatResource;
 use App\MoonShine\Resources\TicketResource;
 use App\MoonShine\Resources\SessionResource;
 use App\MoonShine\Resources\VisitorResource;
+use App\MoonShine\Resources\HallInfoResource;
 use App\MoonShine\Resources\FilmGenreResource;
 use MoonShine\Resources\MoonShineUserResource;
 use App\MoonShine\Resources\FilmStudioResource;
@@ -51,6 +51,7 @@ class MoonShineServiceProvider extends ServiceProvider
             MenuGroup::make('Halls', [
             MenuItem::make('Halls', new HallResource(), 'heroicons.tv'),
             MenuItem::make('Hall names', new HallGeneratorResource(), 'heroicons.tv'),
+            MenuItem::make('Hall info', new HallInfoResource(), 'heroicons.tv'),
             ])
             ->icon('heroicons.view-columns'),
 

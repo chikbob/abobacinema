@@ -24,19 +24,6 @@ class HallGeneratorResource extends Resource
 		    ID::make()->sortable(),
             Text::make('Hall name', 'name')
             ->required(),
-            Number::make('Row', 'row')
-            ->min(1)
-            ->max(25)
-            ->required(),
-            Number::make('Seat', 'seat')
-            ->min(1)
-            ->max(30)
-            ->required(),
-            Number::make('Price', 'price')
-            ->min(1)
-            ->max(99999)
-            ->required(),
-            SwitchBoolean::make('Purchased', 'purchased'),
         ];
 	}
 

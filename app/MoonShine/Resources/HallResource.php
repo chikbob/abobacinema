@@ -20,7 +20,7 @@ class HallResource extends Resource
 	{
 		return [
 		    ID::make()->sortable(),
-            BelongsTo::make('Hall', 'hall_generator_id', fn($item) => $item->id .' | '. $item->name .' | Row: '. $item->row .' | Seat: '. $item->seat)
+            BelongsTo::make('Hall', 'hall_generator_id', fn($item) => $item->id .' | '. $item->name)
             ->searchable(),
             BelongsTo::make('Session', 'session_id', fn($item) => $item->id .' | Film: '. $item->film->name .' | Time: '. $item->time)
             ->searchable(),

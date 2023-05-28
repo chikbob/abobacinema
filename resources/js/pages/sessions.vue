@@ -10,7 +10,6 @@
             </div>
         </div>
         <Pagination :links="film.links" />
-        {{ props.film }}
     </PageLayout>
 </template>
 

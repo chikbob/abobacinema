@@ -3,9 +3,10 @@
 namespace App\Http\Resources;
 
 use App\Models\Hall;
-use App\Models\HallGenerator;
 use App\Models\Session;
+use App\Models\HallInfo;
 use Illuminate\Http\Request;
+use App\Models\HallGenerator;
 use Illuminate\Http\Resources\Json\JsonResource;
 
 class FilmResource extends JsonResource
@@ -27,8 +28,9 @@ class FilmResource extends JsonResource
             'sessions' => SessionResource::collection($this->sessions),
             'films' => FilmResource::all(),
             'sessionsALL' => Session::all(),
-            'hallInfo' => Hall::all(),
-            'hallGeneratoInfo' => HallGenerator::all()
+            'hallName' => Hall::all(),
+            'hallGeneratorInfo' => HallGenerator::all(),
+            'hallInfo' => HallInfo::all()
         ];
     }
 }
