@@ -21,8 +21,11 @@ class FilmCountryResource extends Resource
 	{
 		return [
 		    ID::make()->sortable(),
-            BelongsTo::make('Film', 'film', fn($item) => $item->id .' | '. $item->name),
+            BelongsTo::make('Film', 'film', fn($item) => $item->id .' | '. $item->name)
+            ->searchable()
+            ->required(),
             Text::make('Country', 'country')
+            ->required()
         ];
 	}
 

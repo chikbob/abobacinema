@@ -55,11 +55,11 @@ class MoonShineServiceProvider extends ServiceProvider
             ])
             ->icon('heroicons.view-columns'),
 
-            MenuItem::make('Visitors', new VisitorResource(), 'heroicons.user-group')
-            ->badge(fn() => Visitor::query()->count()),
+            // MenuItem::make('Visitors', new VisitorResource(), 'heroicons.user-group')
+            // ->badge(fn() => Visitor::query()->count()),
 
-            MenuItem::make('Tickets', new TicketResource(), 'heroicons.ticket')
-            ->badge(fn() => Ticket::query()->count()),
+            // MenuItem::make('Tickets', new TicketResource(), 'heroicons.ticket')
+            // ->badge(fn() => Ticket::query()->count()),
         ]);
     }
 }

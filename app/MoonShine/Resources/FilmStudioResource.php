@@ -22,8 +22,10 @@ class FilmStudioResource extends Resource
 		return [
 		    ID::make()->sortable(),
             BelongsTo::make('Film', 'film', fn($item) => $item->id .' | '. $item->name)
-            ->searchable(),
+            ->searchable()
+            ->required(),
             Text::make('Studio', 'studio')
+            ->required()
         ];
 	}
 

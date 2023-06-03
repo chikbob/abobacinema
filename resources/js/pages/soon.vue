@@ -53,7 +53,7 @@ function submit() {
 .movie {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     flex-direction: column;
     width: 20%;
 }
@@ -68,8 +68,10 @@ function submit() {
     margin-left: auto;
     margin-right: auto;
     display: block;
-    width: 65%;
     border: 2px solid #f39c42;
+
+    width: 130px;
+    height: 191px;
 }
 
 .name__style {
@@ -77,7 +79,12 @@ function submit() {
     font-size: 1.5rem;
     color: #f39c42;
     width: 100%;
+    height: 55px;
     text-align: center;
-    margin: 20px 0;
+    margin: 20px auto 20px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 </style>

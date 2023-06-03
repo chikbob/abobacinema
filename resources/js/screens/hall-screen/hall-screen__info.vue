@@ -24,11 +24,7 @@
                                 <div v-for="cell in item[3].toString()" :key="item[3].toString().indexOf(cell)">
                                     <CustomTooltip
                                         :label="'Ряд: ' + item[0] + `\n` + 'Місце: ' + item[1] + `\n` + 'Вартість: ' + item[2]">
-                                        <div @click="item[3] = 0" v-if="cell == 1" :class="cnHallScreen('info-cell_buy')">{{
-                                            item[1]
-                                        }}
-                                        </div>
-                                        <div @click="item[3] = 1" v-else :class="cnHallScreen('info-cell_busy')">{{
+                                        <div :class="cnHallScreen('info-cell_busy')">{{
                                             item[1]
                                         }}
                                         </div>
@@ -42,16 +38,11 @@
             <div :class="cnHallScreen('info-hall_next')">
                 <div v-for="item in mergeArrayHallGenerator" :key="mergeArrayHallGenerator.indexOf(item)">
                     <div v-if="item[0] == 2">
-
                         <div :class="cnHallScreen('info-cell')">
                             <div v-for="cell in item[3].toString()" :key="item[3].toString().indexOf(cell)">
                                 <CustomTooltip
                                     :label="'Ряд: ' + item[0] + `\n` + 'Місце: ' + item[1] + `\n` + 'Вартість: ' + item[2]">
-                                    <div @click="item[3] = 0" v-if="cell == 1" :class="cnHallScreen('info-cell_buy')">{{
-                                        item[1]
-                                    }}
-                                    </div>
-                                    <div @click="item[3] = 1" v-else :class="cnHallScreen('info-cell_busy')">{{
+                                    <div :class="cnHallScreen('info-cell_busy')">{{
                                         item[1]
                                     }}
                                     </div>
@@ -64,16 +55,11 @@
             <div :class="cnHallScreen('info-hall_next')">
                 <div v-for="item in mergeArrayHallGenerator" :key="mergeArrayHallGenerator.indexOf(item)">
                     <div v-if="item[0] == 3">
-
                         <div :class="cnHallScreen('info-cell')">
                             <div v-for="cell in item[3].toString()" :key="item[3].toString().indexOf(cell)">
                                 <CustomTooltip
                                     :label="'Ряд: ' + item[0] + `\n` + 'Місце: ' + item[1] + `\n` + 'Вартість: ' + item[2]">
-                                    <div @click="item[3] = 0" v-if="cell == 1" :class="cnHallScreen('info-cell_buy')">{{
-                                        item[1]
-                                    }}
-                                    </div>
-                                    <div @click="item[3] = 1" v-else :class="cnHallScreen('info-cell_busy')">{{
+                                    <div :class="cnHallScreen('info-cell_busy')">{{
                                         item[1]
                                     }}
                                     </div>
@@ -86,16 +72,11 @@
             <div :class="cnHallScreen('info-hall_next')">
                 <div v-for="item in mergeArrayHallGenerator" :key="mergeArrayHallGenerator.indexOf(item)">
                     <div v-if="item[0] == 4">
-
                         <div :class="cnHallScreen('info-cell')">
                             <div v-for="cell in item[3].toString()" :key="item[3].toString().indexOf(cell)">
                                 <CustomTooltip
                                     :label="'Ряд: ' + item[0] + `\n` + 'Місце: ' + item[1] + `\n` + 'Вартість: ' + item[2]">
-                                    <div @click="item[3] = 0" v-if="cell == 1" :class="cnHallScreen('info-cell_buy')">{{
-                                        item[1]
-                                    }}
-                                    </div>
-                                    <div @click="item[3] = 1" v-else :class="cnHallScreen('info-cell_busy')">{{
+                                    <div :class="cnHallScreen('info-cell_busy')">{{
                                         item[1]
                                     }}
                                     </div>
@@ -108,16 +89,11 @@
             <div :class="cnHallScreen('info-hall_next')">
                 <div v-for="item in mergeArrayHallGenerator" :key="mergeArrayHallGenerator.indexOf(item)">
                     <div v-if="item[0] == 5">
-
                         <div :class="cnHallScreen('info-cell')">
                             <div v-for="cell in item[3].toString()" :key="item[3].toString().indexOf(cell)">
                                 <CustomTooltip
                                     :label="'Ряд: ' + item[0] + `\n` + 'Місце: ' + item[1] + `\n` + 'Вартість: ' + item[2]">
-                                    <div @click="item[3] = 0" v-if="cell == 1" :class="cnHallScreen('info-cell_buy')">{{
-                                        item[1]
-                                    }}
-                                    </div>
-                                    <div @click="item[3] = 1" v-else :class="cnHallScreen('info-cell_busy')">{{
+                                    <div :class="cnHallScreen('info-cell_busy')">{{
                                         item[1]
                                     }}
                                     </div>
@@ -130,16 +106,11 @@
             <div :class="cnHallScreen('info-hall_next')">
                 <div v-for="item in mergeArrayHallGenerator" :key="mergeArrayHallGenerator.indexOf(item)">
                     <div v-if="item[0] == 6">
-
                         <div :class="cnHallScreen('info-cell')">
                             <div v-for="cell in item[3].toString()" :key="item[3].toString().indexOf(cell)">
                                 <CustomTooltip
                                     :label="'Ряд: ' + item[0] + `\n` + 'Місце: ' + item[1] + `\n` + 'Вартість: ' + item[2]">
-                                    <div @click="item[3] = 0" v-if="cell == 1" :class="cnHallScreen('info-cell_buy')">{{
-                                        item[1]
-                                    }}
-                                    </div>
-                                    <div @click="item[3] = 1" v-else :class="cnHallScreen('info-cell_busy')">{{
+                                    <div :class="cnHallScreen('info-cell_busy')">{{
                                         item[1]
                                     }}
                                     </div>
@@ -152,192 +123,11 @@
             <div :class="cnHallScreen('info-hall_next')">
                 <div v-for="item in mergeArrayHallGenerator" :key="mergeArrayHallGenerator.indexOf(item)">
                     <div v-if="item[0] == 7">
-
                         <div :class="cnHallScreen('info-cell')">
                             <div v-for="cell in item[3].toString()" :key="item[3].toString().indexOf(cell)">
                                 <CustomTooltip
                                     :label="'Ряд: ' + item[0] + `\n` + 'Місце: ' + item[1] + `\n` + 'Вартість: ' + item[2]">
-                                    <div @click="item[3] = 0" v-if="cell == 1" :class="cnHallScreen('info-cell_buy')">{{
-                                        item[1]
-                                    }}
-                                    </div>
-                                    <div @click="item[3] = 1" v-else :class="cnHallScreen('info-cell_busy')">{{
-                                        item[1]
-                                    }}
-                                    </div>
-                                </CustomTooltip>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div :class="cnHallScreen('info-hall_next')">
-                <div v-for="item in mergeArrayHallGenerator" :key="mergeArrayHallGenerator.indexOf(item)">
-                    <div v-if="item[0] == 8">
-
-                        <div :class="cnHallScreen('info-cell')">
-                            <div v-for="cell in item[3].toString()" :key="item[3].toString().indexOf(cell)">
-                                <CustomTooltip
-                                    :label="'Ряд: ' + item[0] + `\n` + 'Місце: ' + item[1] + `\n` + 'Вартість: ' + item[2]">
-                                    <div @click="item[3] = 0" v-if="cell == 1" :class="cnHallScreen('info-cell_buy')">{{
-                                        item[1]
-                                    }}
-                                    </div>
-                                    <div @click="item[3] = 1" v-else :class="cnHallScreen('info-cell_busy')">{{
-                                        item[1]
-                                    }}
-                                    </div>
-                                </CustomTooltip>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div :class="cnHallScreen('info-hall_next')">
-                <div v-for="item in mergeArrayHallGenerator" :key="mergeArrayHallGenerator.indexOf(item)">
-                    <div v-if="item[0] == 9">
-
-                        <div :class="cnHallScreen('info-cell')">
-                            <div v-for="cell in item[3].toString()" :key="item[3].toString().indexOf(cell)">
-                                <CustomTooltip
-                                    :label="'Ряд: ' + item[0] + `\n` + 'Місце: ' + item[1] + `\n` + 'Вартість: ' + item[2]">
-                                    <div @click="item[3] = 0" v-if="cell == 1" :class="cnHallScreen('info-cell_buy')">{{
-                                        item[1]
-                                    }}
-                                    </div>
-                                    <div @click="item[3] = 1" v-else :class="cnHallScreen('info-cell_busy')">{{
-                                        item[1]
-                                    }}
-                                    </div>
-                                </CustomTooltip>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div :class="cnHallScreen('info-hall_next')">
-                <div v-for="item in mergeArrayHallGenerator" :key="mergeArrayHallGenerator.indexOf(item)">
-                    <div v-if="item[0] == 10">
-
-                        <div :class="cnHallScreen('info-cell')">
-                            <div v-for="cell in item[3].toString()" :key="item[3].toString().indexOf(cell)">
-                                <CustomTooltip
-                                    :label="'Ряд: ' + item[0] + `\n` + 'Місце: ' + item[1] + `\n` + 'Вартість: ' + item[2]">
-                                    <div @click="item[3] = 0" v-if="cell == 1" :class="cnHallScreen('info-cell_buy')">{{
-                                        item[1]
-                                    }}
-                                    </div>
-                                    <div @click="item[3] = 1" v-else :class="cnHallScreen('info-cell_busy')">{{
-                                        item[1]
-                                    }}
-                                    </div>
-                                </CustomTooltip>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div :class="cnHallScreen('info-hall_next')">
-                <div v-for="item in mergeArrayHallGenerator" :key="mergeArrayHallGenerator.indexOf(item)">
-                    <div v-if="item[0] == 11">
-
-                        <div :class="cnHallScreen('info-cell')">
-                            <div v-for="cell in item[3].toString()" :key="item[3].toString().indexOf(cell)">
-                                <CustomTooltip
-                                    :label="'Ряд: ' + item[0] + `\n` + 'Місце: ' + item[1] + `\n` + 'Вартість: ' + item[2]">
-                                    <div @click="item[3] = 0" v-if="cell == 1" :class="cnHallScreen('info-cell_buy')">{{
-                                        item[1]
-                                    }}
-                                    </div>
-                                    <div @click="item[3] = 1" v-else :class="cnHallScreen('info-cell_busy')">{{
-                                        item[1]
-                                    }}
-                                    </div>
-                                </CustomTooltip>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div :class="cnHallScreen('info-hall_next')">
-                <div v-for="item in mergeArrayHallGenerator" :key="mergeArrayHallGenerator.indexOf(item)">
-                    <div v-if="item[0] == 12">
-
-                        <div :class="cnHallScreen('info-cell')">
-                            <div v-for="cell in item[3].toString()" :key="item[3].toString().indexOf(cell)">
-                                <CustomTooltip
-                                    :label="'Ряд: ' + item[0] + `\n` + 'Місце: ' + item[1] + `\n` + 'Вартість: ' + item[2]">
-                                    <div @click="item[3] = 0" v-if="cell == 1" :class="cnHallScreen('info-cell_buy')">{{
-                                        item[1]
-                                    }}
-                                    </div>
-                                    <div @click="item[3] = 1" v-else :class="cnHallScreen('info-cell_busy')">{{
-                                        item[1]
-                                    }}
-                                    </div>
-                                </CustomTooltip>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div :class="cnHallScreen('info-hall_next')">
-                <div v-for="item in mergeArrayHallGenerator" :key="mergeArrayHallGenerator.indexOf(item)">
-                    <div v-if="item[0] == 13">
-
-                        <div :class="cnHallScreen('info-cell')">
-                            <div v-for="cell in item[3].toString()" :key="item[3].toString().indexOf(cell)">
-                                <CustomTooltip
-                                    :label="'Ряд: ' + item[0] + `\n` + 'Місце: ' + item[1] + `\n` + 'Вартість: ' + item[2]">
-                                    <div @click="item[3] = 0" v-if="cell == 1" :class="cnHallScreen('info-cell_buy')">{{
-                                        item[1]
-                                    }}
-                                    </div>
-                                    <div @click="item[3] = 1" v-else :class="cnHallScreen('info-cell_busy')">{{
-                                        item[1]
-                                    }}
-                                    </div>
-                                </CustomTooltip>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div :class="cnHallScreen('info-hall_next')">
-                <div v-for="item in mergeArrayHallGenerator" :key="mergeArrayHallGenerator.indexOf(item)">
-                    <div v-if="item[0] == 14">
-
-                        <div :class="cnHallScreen('info-cell')">
-                            <div v-for="cell in item[3].toString()" :key="item[3].toString().indexOf(cell)">
-                                <CustomTooltip
-                                    :label="'Ряд: ' + item[0] + `\n` + 'Місце: ' + item[1] + `\n` + 'Вартість: ' + item[2]">
-                                    <div @click="item[3] = 0" v-if="cell == 1" :class="cnHallScreen('info-cell_buy')">{{
-                                        item[1]
-                                    }}
-                                    </div>
-                                    <div @click="item[3] = 1" v-else :class="cnHallScreen('info-cell_busy')">{{
-                                        item[1]
-                                    }}
-                                    </div>
-                                </CustomTooltip>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div :class="cnHallScreen('info-hall_next')">
-                <div v-for="item in mergeArrayHallGenerator" :key="mergeArrayHallGenerator.indexOf(item)">
-                    <div v-if="item[0] == 15">
-
-                        <div :class="cnHallScreen('info-cell')">
-                            <div v-for="cell in item[3].toString()" :key="item[3].toString().indexOf(cell)">
-                                <CustomTooltip
-                                    :label="'Ряд: ' + item[0] + `\n` + 'Місце: ' + item[1] + `\n` + 'Вартість: ' + item[2]">
-                                    <div @click="item[3] = 0" v-if="cell == 1" :class="cnHallScreen('info-cell_buy')">{{
-                                        item[1]
-                                    }}
-                                    </div>
-                                    <div @click="item[3] = 1" v-else :class="cnHallScreen('info-cell_busy')">{{
+                                    <div :class="cnHallScreen('info-cell_busy')">{{
                                         item[1]
                                     }}
                                     </div>
@@ -392,9 +182,13 @@ for (let indexSession = 0; indexSession < sessions.length; ++indexSession) {
                                 for (let indexHallInfo = 0; indexHallInfo < hallInfo.length; ++indexHallInfo) {
                                     const valueHallInfo = hallInfo[indexHallInfo]
                                     if (valueHallInfo.hall_id == valueHall.id) {
-                                        arrayHallGenerator = [valueHallInfo.row, valueHallInfo.seat, valueHallInfo.price, valueHallInfo.purchased]
-                                        mergeArrayHallGenerator.value.push(arrayHallGenerator)
-                                        hallName = valueHallGenerator.name
+                                        if (valueHallGenerator.id == valueHall.hall_generator_id) {
+                                            hallName = valueHallGenerator.name
+                                        }
+                                        if (valueHallInfo.hall_id == valueHallGenerator.id) {
+                                            arrayHallGenerator = [valueHallInfo.row, valueHallInfo.seat, valueHallInfo.price, valueHallInfo.purchased]
+                                            mergeArrayHallGenerator.value.push(arrayHallGenerator)
+                                        }
                                     }
                                 }
                             }
