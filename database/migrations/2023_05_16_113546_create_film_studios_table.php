@@ -12,7 +12,7 @@ return new class extends Migration
     {
         Schema::create('film_studios', function (Blueprint $table) {
             $table->id();
-            $table->foreignIdFor(Film::class);
+            $table->foreignIdFor(Film::class)->constrained();
             $table->string('studio');
             $table->timestamps();
         });

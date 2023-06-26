@@ -38,7 +38,7 @@ class DatabaseSeeder extends Seeder
         FilmStudio::factory(10)->create();
         FilmLanguage::factory(10)->create();
         FilmGenre::factory(10)->create();
-        // Session::factory(10)->create();
+        Session::factory(10)->create();
         // Ticket::factory(10)->create();
     }
 }

@@ -12,8 +12,7 @@ return new class extends Migration
     {
         Schema::create('halls', function (Blueprint $table) {
             $table->id();
-            $table->foreignIdFor(HallGenerator::class);
-            $table->foreignIdFor(Session::class);
+            $table->foreignIdFor(Session::class)->constrained();
             $table->timestamps();
         });
     }

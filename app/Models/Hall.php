@@ -16,14 +16,14 @@ class Hall extends Model
         return $this->belongsTo(Film::class);
     }
 
-    public function session(): BelongsTo
+    public function session(): HasMany
     {
-        return $this->belongsTo(Session::class);
+        return $this->hasMany(Session::class);
     }
 
-    public function hallGenerator(): BelongsTo
+    public function hallGenerator(): HasMany
     {
-        return $this->belongsTo(HallGenerator::class);
+        return $this->hasMany(HallGenerator::class);
     }
 
     public function hallInfo()
