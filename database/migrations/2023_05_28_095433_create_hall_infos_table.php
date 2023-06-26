@@ -14,7 +14,7 @@ return new class extends Migration
     {
         Schema::create('hall_infos', function (Blueprint $table) {
             $table->id();
-            $table->foreignIdFor(Hall::class);
+            $table->foreignIdFor(Hall::class)->constrained();
             $table->integer('row');
             $table->integer('seat');
             $table->integer('price');

@@ -1,6 +1,5 @@
 <?php
 
-use App\Models\Language;
 use App\Models\Film;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
@@ -12,7 +11,7 @@ return new class extends Migration
     {
         Schema::create('film_languages', function (Blueprint $table) {
             $table->id();
-            $table->string('film_id');
+            $table->foreignIdFor(Film::class)->constrained();
             $table->string('language');
             $table->timestamps();
         });

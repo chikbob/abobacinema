@@ -12,7 +12,7 @@ return new class extends Migration
     {
         Schema::create('film_countries', function (Blueprint $table) {
             $table->id();
-            $table->foreignIdFor(Film::class);
+            $table->foreignIdFor(Film::class)->constrained();
             $table->string('country');
             $table->timestamps();
         });
