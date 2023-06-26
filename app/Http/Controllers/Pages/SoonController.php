@@ -9,10 +9,10 @@ use Illuminate\Http\Request;
 
 class SoonController
 {
-    public function __invoke(Film $film, Request $request): Response
+    public function __invoke(Request $request): Response
     {
         return Inertia::render('soon', [
-            'soon' => Film::where('released','=',$request->released || false)->paginate(10)
+            'soon' => Film::where('released','=',$request->released || false)->paginate(8)
         ]);
     }
 }

@@ -3,7 +3,7 @@
         <div class="content">
             <div v-for="film in films" :key="film.id" class="movie">
                 <Link :href="`/films/${film.id}`">
-                <img :src="film.poster" alt="image_poster">
+                <img class="image" :src="film.poster" alt="image_poster">
                 </Link>
                 <p class="name__style">{{ film.name }}</p>
             </div>
@@ -55,7 +55,7 @@ function submit() {
     align-items: center;
     justify-content: flex-start;
     flex-direction: column;
-    width: 20%;
+    width: 25%;
 }
 
 @media (max-width: 1250px) {
@@ -70,8 +70,8 @@ function submit() {
     display: block;
     border: 2px solid #f39c42;
 
-    width: 130px;
-    height: 191px;
+    width: 200px;
+    height: 300px;
 }
 
 .name__style {

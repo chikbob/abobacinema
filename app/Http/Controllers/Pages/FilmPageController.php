@@ -9,10 +9,10 @@ use Illuminate\Http\Request;
 
 class FilmPageController
 {
-    public function __invoke(Film $film, Request $request): Response
+    public function __invoke(Request $request): Response
     {
         return Inertia::render('sessions', [
-            'film' => Film::where('released','=',$request->released || true)->paginate(10),
+            'film' => Film::where('released','=',$request->released || true)->paginate(8),
         ]);
     }
 }

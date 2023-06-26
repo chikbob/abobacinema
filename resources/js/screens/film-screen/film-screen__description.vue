@@ -5,29 +5,27 @@
         </div>
         <div :class="cnFilmScreen('description-item')">
             <div :class="cnFilmScreen('description-item_orange')">{{ textDirector }}</div>{{
-                checkArray(model.film.directors, 'director').toString() }}
+                directors.toString() }}
         </div>
         <div :class="cnFilmScreen('description-item')">
             <div :class="cnFilmScreen('description-item_orange')">Рік виходу:</div>{{ model.film.year }}
         </div>
         <div :class="cnFilmScreen('description-item')">
             <div :class="cnFilmScreen('description-item_orange')">{{ textLanguage }}</div>{{
-                checkArray(model.film.languages, 'language').toString() }}
+                languages.toString() }}
         </div>
         <div :class="cnFilmScreen('description-item')">
-            <div :class="cnFilmScreen('description-item_orange')">{{ textGenre }}</div>{{ checkArray(model.film.genres,
-                'genre').toString() }}
+            <div :class="cnFilmScreen('description-item_orange')">{{ textGenre }}</div>{{ genres.toString() }}
         </div>
         <div :class="cnFilmScreen('description-item')">
             <div :class="cnFilmScreen('description-item_orange')">Тривалість:</div>{{ checkNull(model.film.duration) }}
         </div>
         <div :class="cnFilmScreen('description-item')">
             <div :class="cnFilmScreen('description-item_orange')">{{ textCountry }}</div>{{
-                (checkArray(model.film.countries, 'country')).toString() }}
+                countries.toString() }}
         </div>
         <div :class="cnFilmScreen('description-item')">
-            <div :class="cnFilmScreen('description-item_orange')">{{ textStudio }}</div>{{ (checkArray(model.film.studios,
-                'studio')).toString() }}
+            <div :class="cnFilmScreen('description-item_orange')">{{ textStudio }}</div>{{ studios.toString() }}
         </div>
     </div>
 </template>
@@ -36,6 +34,13 @@
 import { ref } from "vue";
 import { cnFilmScreen } from "./film-screen.const.js";
 import { filmModel } from "./film-screen.model.js";
+const model = filmModel();
+
+let studios = model.film.studios.join(', ')
+let directors = model.film.directors.join(', ')
+let languages = model.film.languages.join(', ')
+let genres = model.film.genres.join(', ')
+let countries = model.film.countries.join(', ')
 
 let textStudio = ref("Студія:")
 let textCountry = ref("Країна:")
@@ -47,27 +52,6 @@ function checkNull(time) {
     time = time.toString().replace(/(\d{1,2})(\d{2})$/, "$1:$2");
     return time
 }
-
-function checkArray(array, string) {
-    if (array.length > 1 && string == "studio") {
-        textStudio.value = "Студії:"
-    }
-    if (array.length > 1 && string == "country") {
-        textCountry.value = "Країни:"
-    }
-    if (array.length > 1 && string == "director") {
-        textDirector.value = "Режисери:"
-    }
-    if (array.length > 1 && string == "language") {
-        textLanguage.value = "Мови:"
-    }
-    if (array.length > 1 && string == "genre") {
-        textGenre.value = "Жанри:"
-    }
-    return array
-}
-
-const model = filmModel();
 </script>
 
 <style lang="scss" scoped>
@@ -88,4 +72,5 @@ const model = filmModel();
             margin-right: 0.5rem
         }
     }
-}</style>
+}
+</style>
