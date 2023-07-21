@@ -19,7 +19,8 @@ class HallResource extends JsonResource
         return [
             ...parent::toArray($request), 
             $this->hall_id,
-            'sessions' =>  Session::all()
+            // 'sessions' =>  Session::all(),
+            // 'sessionsCheck' => SessionResource::collection($this->sessions),
         ];
     }
 }

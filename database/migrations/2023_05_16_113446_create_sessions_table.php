@@ -11,7 +11,8 @@ return new class extends Migration {
     {
         Schema::create('sessions', function (Blueprint $table) {
             $table->id();
-            $table->foreignIdFor(Film::class)->constrained();
+            $table->foreignIdFor(Film::class)->constrained()->cascadeOnDelete()->cascadeOnUpdate();
+            $table->foreignIdFor(Hall::class)->constrained()->cascadeOnDelete()->cascadeOnUpdate();
             $table->text('time');
             $table->timestamps();
         });

@@ -14,7 +14,6 @@ return new class extends Migration
     {
         Schema::create('hall_generators', function (Blueprint $table) {
             $table->id();
-            $table->foreignIdFor(Hall::class)->constrained();
             $table->text('name');
             $table->timestamps();
         });

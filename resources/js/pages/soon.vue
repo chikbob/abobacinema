@@ -55,12 +55,12 @@ function submit() {
     align-items: center;
     justify-content: flex-start;
     flex-direction: column;
-    width: 20%;
+    width: 25%;
 }
 
 @media (max-width: 1250px) {
     .movie {
-        width: 20%;
+        width: 25%;
     }
 }
 
@@ -70,8 +70,8 @@ function submit() {
     display: block;
     border: 2px solid #f39c42;
 
-    width: 130px;
-    height: 191px;
+    width: 200px;
+    height: 260px;
 }
 
 .name__style {

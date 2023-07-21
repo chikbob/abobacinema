@@ -11,17 +11,21 @@ class Hall extends Model
 {
     use HasFactory;
 
-    public function film(): BelongsTo
+    protected $fillable = [
+        "hall_generator_id"
+    ];
+
+    public function film()
     {
         return $this->belongsTo(Film::class);
     }
 
-    public function session(): HasMany
+    public function session()
     {
         return $this->hasMany(Session::class);
     }
 
-    public function hallGenerator(): HasMany
+    public function hallGenerator()
     {
         return $this->hasMany(HallGenerator::class);
     }
@@ -30,5 +34,4 @@ class Hall extends Model
     {
         return $this->belongsTo(HallInfo::class);
     }
-
 }

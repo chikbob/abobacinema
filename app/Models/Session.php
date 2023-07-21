@@ -11,17 +11,23 @@ class Session extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        "film_id",
+        "hall_id",
+        "time"
+    ];
+
     /**
      * film -> session
      * hall -> session
      * @return BelongsTo
      */
-    public function film(): BelongsTo
+    public function film()
     {
         return $this->belongsTo(Film::class);
     }
 
-    public function hall(): BelongsTo
+    public function hall()
     {
         return $this->belongsTo(Hall::class);
     }

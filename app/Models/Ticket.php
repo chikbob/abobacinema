@@ -11,12 +11,12 @@ class Ticket extends Model
 {
     use HasFactory;
 
-    public function hall(): BelongsTo
+    public function hall()
     {
         return $this->belongsTo(Hall::class);
     }
 
-    public function visitor(): BelongsTo
+    public function visitor()
     {
         return $this->belongsTo(Visitor::class);
     }

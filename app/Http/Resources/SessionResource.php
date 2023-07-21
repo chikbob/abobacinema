@@ -18,7 +18,8 @@ class SessionResource extends JsonResource
         return [
             ...parent::toArray($request),
             'times' => $this->time,
-            'halls' => Hall::all(),
+            'halls' => HallResource::collection($this->hallsALL),
+            // 'halls' => Hall::all(),
         ];
     }
 }

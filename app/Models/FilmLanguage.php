@@ -14,7 +14,7 @@ class FilmLanguage extends Model
      * film <- film_languages
      * @return BelongsTo
      */
-    public function film(): BelongsTo
+    public function film()
     {
         return $this->belongsTo(Film::class);
     }

@@ -14,7 +14,7 @@ class FilmCountry extends Model
      * film <- film_countries
      * @return BelongsTo
      */
-    public function film(): BelongsTo
+    public function film()
     {
         return $this->belongsTo(Film::class);
     }

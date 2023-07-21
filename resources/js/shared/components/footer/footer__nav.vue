@@ -1,5 +1,5 @@
 <template>
-    <div :class="cnFooter('orangeLine')" style="margin-top: 14rem">
+    <div :class="cnFooter('orangeLine')">
         <nav :class="cnFooter('nav')">
 
             <div :class="cnFooter('nav__container')">

@@ -30,14 +30,14 @@ class DatabaseSeeder extends Seeder
         //     'email' => 'ricarrdo1488@gmail.com',
         // ]);
 
-        // Film::factory(10)->create();
+        Film::factory(10)->create();
         // Hall::factory(10)->create();
         // Visitor::factory(10)->create();
-        FilmCountry::factory(10)->create();
-        FilmDirector::factory(10)->create();
-        FilmStudio::factory(10)->create();
-        FilmLanguage::factory(10)->create();
-        FilmGenre::factory(10)->create();
+        // FilmCountry::factory(10)->create();
+        // FilmDirector::factory(10)->create();
+        // FilmStudio::factory(10)->create();
+        // FilmLanguage::factory(10)->create();
+        // FilmGenre::factory(10)->create();
         Session::factory(10)->create();
         // Ticket::factory(10)->create();
     }

@@ -10,7 +10,6 @@ class FilmStudio extends Model
 {
     use HasFactory;
 
-
     /**
      * film <-- film-studio
      * @return BelongsTo

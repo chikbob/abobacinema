@@ -14,7 +14,7 @@ class FilmGenre extends Model
      * film <- film_genres
      * @return BelongsTo
      */
-    public function film(): BelongsTo
+    public function film()
     {
         return $this->belongsTo(Film::class);
     }

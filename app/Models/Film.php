@@ -10,9 +10,22 @@ class Film extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'name',
+        'poster',
+        'age',
+        'year',
+        'original_name',
+        'duration',
+        'description',
+        'released',
+        'release_start_at',
+        'release_end_at'
+    ];
+
     public function directors() 
     {
-        return $this->hasMany(FilmDirector::class); 
+        return $this->hasMany(FilmDirector::class);
     }
 
     public function languages() 

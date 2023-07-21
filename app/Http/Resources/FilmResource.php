@@ -26,11 +26,11 @@ class FilmResource extends JsonResource
             'countries' => CountryResource::collection($this->countries),
             'studios' => StudioResource::collection($this->studios),
             'sessions' => SessionResource::collection($this->sessions),
-            'films' => FilmResource::all(),
-            'sessionsALL' => Session::all(),
-            'hallName' => Hall::all(),
-            'hallGeneratorInfo' => HallGenerator::all(),
-            'hallInfo' => HallInfo::all()
+            // 'films' => FilmResource::all(),
+            // 'sessionsALL' => Session::all(),
+            // 'hallName' => Hall::all(),
+            // 'hallGeneratorInfo' => HallGenerator::all(),
+            // 'hallInfo' => HallInfo::all()
         ];
     }
 }

@@ -14,7 +14,7 @@ class FilmDirector extends Model
      * film <- film_directors
      * @return BelongsTo
      */
-    public function film(): BelongsTo
+    public function film()
     {
         return $this->belongsTo(Film::class);
     }

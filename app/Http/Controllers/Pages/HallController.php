@@ -8,13 +8,16 @@ use Inertia\Inertia;
 use Inertia\Response;
 use App\Http\Resources\FilmResource;
 use App\Http\Resources\HallResource;
+use App\Http\Resources\SessionResource;
+use App\Models\Session;
 
 class HallController
 {
-    public function __invoke(Hall $hall, Film $film): Response
+    public function __invoke(Hall $hall, Film $film, Session $session): Response
     {
         return Inertia::render('halls/[id]', [
-            'hall' => HallResource::make($hall),
+            'sessions' => SessionResource::make($session),
+            'halls' => HallResource::make($hall),
             'film' => FilmResource::make($film),
         ]);
     }

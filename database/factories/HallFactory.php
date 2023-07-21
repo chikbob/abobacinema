@@ -18,7 +18,6 @@ class HallFactory extends Factory
     {
         return [
             "hall_generator_id" => \App\Models\HallGenerator::factory(),
-            "session_id" => \App\Models\Session::factory(),
         ];
     }
 }

@@ -10,12 +10,12 @@ class HallInfo extends Model
 {
     use HasFactory;
 
-    public function hall(): BelongsTo
+    public function hall()
     {
         return $this->belongsTo(Hall::class);
     }
 
-    public function hallGenerator(): BelongsTo
+    public function hallGenerator()
     {
         return $this->belongsTo(Hall::class);
     }

@@ -11,8 +11,12 @@ class HallGenerator extends Model
 {
     use HasFactory;
 
-    public function halls(): HasMany
+    protected $fillable = [
+        "name"
+    ];
+
+    public function hall()
     {
-        return $this->hasMany(Hall::class);
+        return $this->belongsTo(Hall::class);
     }
 }

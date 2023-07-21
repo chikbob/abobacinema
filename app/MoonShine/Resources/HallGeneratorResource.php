@@ -7,6 +7,7 @@ use MoonShine\Fields\Text;
 
 use MoonShine\Fields\Number;
 use App\Models\HallGenerator;
+use MoonShine\Fields\BelongsTo;
 use MoonShine\Resources\Resource;
 use MoonShine\Fields\SwitchBoolean;
 use MoonShine\Actions\FiltersAction;

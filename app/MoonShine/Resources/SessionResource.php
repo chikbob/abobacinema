@@ -21,7 +21,10 @@ class SessionResource extends Resource
 	{
 		return [
 		    ID::make()->sortable(),
-            BelongsTo::make('Film', 'film', fn($item) => $item->id .' | '. $item->name)
+            BelongsTo::make('Film', 'film_id', fn($item) => $item->id .' | '. $item->name)
+            ->searchable()
+            ->required(),
+            BelongsTo::make('Hall', 'hall_id', fn($item) => $item->id .' | '. $item->name)
             ->searchable()
             ->required(),
             Text::make('Time', 'time')
