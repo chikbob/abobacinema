@@ -18,7 +18,7 @@
             </div>
             <div :class="cnHallScreen('info-hall')">
                 <div v-for="item in mergeArrayHallGenerator" :key="mergeArrayHallGenerator.indexOf(item)">
-                    <div v-if="item[0] == 1">
+                    <div v-if="item[0] === 1">
                         <div :class="cnHallScreen('info-hall-block')">
                             <div :class="cnHallScreen('info-cell')">
                                 <div v-for="cell in item[3].toString()" :key="item[3].toString().indexOf(cell)">
@@ -37,7 +37,7 @@
             </div>
             <div :class="cnHallScreen('info-hall_next')">
                 <div v-for="item in mergeArrayHallGenerator" :key="mergeArrayHallGenerator.indexOf(item)">
-                    <div v-if="item[0] == 2">
+                    <div v-if="item[0] === 2">
                         <div :class="cnHallScreen('info-cell')">
                             <div v-for="cell in item[3].toString()" :key="item[3].toString().indexOf(cell)">
                                 <CustomTooltip
@@ -54,7 +54,7 @@
             </div>
             <div :class="cnHallScreen('info-hall_next')">
                 <div v-for="item in mergeArrayHallGenerator" :key="mergeArrayHallGenerator.indexOf(item)">
-                    <div v-if="item[0] == 3">
+                    <div v-if="item[0] === 3">
                         <div :class="cnHallScreen('info-cell')">
                             <div v-for="cell in item[3].toString()" :key="item[3].toString().indexOf(cell)">
                                 <CustomTooltip
@@ -71,7 +71,7 @@
             </div>
             <div :class="cnHallScreen('info-hall_next')">
                 <div v-for="item in mergeArrayHallGenerator" :key="mergeArrayHallGenerator.indexOf(item)">
-                    <div v-if="item[0] == 4">
+                    <div v-if="item[0] === 4">
                         <div :class="cnHallScreen('info-cell')">
                             <div v-for="cell in item[3].toString()" :key="item[3].toString().indexOf(cell)">
                                 <CustomTooltip
@@ -88,7 +88,7 @@
             </div>
             <div :class="cnHallScreen('info-hall_next')">
                 <div v-for="item in mergeArrayHallGenerator" :key="mergeArrayHallGenerator.indexOf(item)">
-                    <div v-if="item[0] == 5">
+                    <div v-if="item[0] === 5">
                         <div :class="cnHallScreen('info-cell')">
                             <div v-for="cell in item[3].toString()" :key="item[3].toString().indexOf(cell)">
                                 <CustomTooltip
@@ -105,7 +105,7 @@
             </div>
             <div :class="cnHallScreen('info-hall_next')">
                 <div v-for="item in mergeArrayHallGenerator" :key="mergeArrayHallGenerator.indexOf(item)">
-                    <div v-if="item[0] == 6">
+                    <div v-if="item[0] === 6">
                         <div :class="cnHallScreen('info-cell')">
                             <div v-for="cell in item[3].toString()" :key="item[3].toString().indexOf(cell)">
                                 <CustomTooltip
@@ -122,7 +122,7 @@
             </div>
             <div :class="cnHallScreen('info-hall_next')">
                 <div v-for="item in mergeArrayHallGenerator" :key="mergeArrayHallGenerator.indexOf(item)">
-                    <div v-if="item[0] == 7">
+                    <div v-if="item[0] === 7">
                         <div :class="cnHallScreen('info-cell')">
                             <div v-for="cell in item[3].toString()" :key="item[3].toString().indexOf(cell)">
                                 <CustomTooltip
@@ -168,24 +168,24 @@ let mergeArrayHallGenerator = ref([])
 
 for (let indexSession = 0; indexSession < sessions.length; ++indexSession) {
     const valueSession = sessions[indexSession]
-    if (valueSession.id == modelHall.hall.session_id) {
+    if (valueSession.id === modelHall.hall.session_id) {
         for (let indexFilm = 0; indexFilm < film.length; ++indexFilm) {
             const valueFilm = film[indexFilm]
-            if (valueSession.film_id == valueFilm.id) {
+            if (valueSession.film_id === valueFilm.id) {
                 mergeFilm = [(valueSession.time).toString(), valueFilm.name, valueFilm.poster, valueFilm.duration, valueFilm.age]
                 for (let indexHall = 0; indexHall < halls.length; ++indexHall) {
                     const valueHall = halls[indexHall]
-                    if (valueHall.session_id == valueSession.id) {
+                    if (valueHall.session_id === valueSession.id) {
                         for (let indexHallGenerator = 0; indexHallGenerator < hallNames.length; ++indexHallGenerator) {
                             const valueHallGenerator = hallNames[indexHallGenerator]
-                            if (valueFilm.id == valueSession.film_id) {
+                            if (valueFilm.id === valueSession.film_id) {
                                 for (let indexHallInfo = 0; indexHallInfo < hallInfo.length; ++indexHallInfo) {
                                     const valueHallInfo = hallInfo[indexHallInfo]
-                                    if (valueHallInfo.hall_id == valueHall.id) {
-                                        if (valueHallGenerator.id == valueHall.hall_generator_id) {
+                                    if (valueHallInfo.hall_id === valueHall.id) {
+                                        if (valueHallGenerator.id === valueHall.hall_generator_id) {
                                             hallName = valueHallGenerator.name
                                         }
-                                        if (valueHallInfo.hall_id == valueHallGenerator.id) {
+                                        if (valueHallInfo.hall_id === valueHallGenerator.id) {
                                             arrayHallGenerator = [valueHallInfo.row, valueHallInfo.seat, valueHallInfo.price, valueHallInfo.purchased]
                                             mergeArrayHallGenerator.value.push(arrayHallGenerator)
                                         }
@@ -251,7 +251,7 @@ function checkNull(time) {
             margin: 10px;
 
             font-size: 15px;
-            font-family: "Arial";
+            font-family: "Arial",serif;
             font-weight: bold;
             color: #292929;
 
@@ -276,7 +276,7 @@ function checkNull(time) {
             margin: 10px;
 
             font-size: 15px;
-            font-family: "Arial";
+            font-family: "Arial",serif;
             font-weight: bold;
             color: #d0d0d0;
 
@@ -304,7 +304,7 @@ function checkNull(time) {
 
     &-text {
         font-size: 27px;
-        font-family: "Arial";
+        font-family: "Arial",serif;
         padding-top: 40px;
         font-weight: 400;
         color: #d0d0d0;

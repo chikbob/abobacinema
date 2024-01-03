@@ -4,15 +4,17 @@
         <Link :class="cnHeader('nav-item')" href="/soon">Скоро у прокаті</Link>
         <Link :class="cnHeader('nav-item')" href="/contacts">Контакти</Link>
     </nav>
-    <div :class="cnHeader('orangeLine')" style="margin-bottom: 1.8rem"></div>
+    <div :class="cnHeader('orangeLine')" style=""></div>
 </template>
 
 <script setup>
-import { Link } from '@inertiajs/vue3'
-import { cnHeader } from './header.const';
+import {Link} from '@inertiajs/vue3'
+import {cnHeader} from './header.const';
 </script>
 
 <style lang="scss" scoped>
+@import "scss/attributes";
+
 .header__nav {
     background-color: #383838;
     width: 100%;
@@ -29,7 +31,7 @@ import { cnHeader } from './header.const';
 
         text-decoration: none;
 
-        font-family: "Arial";
+        font-family: "Arial", serif;
         text-align: center;
         color: #d0d0d0;
         min-width: fit-content;
@@ -38,8 +40,63 @@ import { cnHeader } from './header.const';
     }
 }
 
-.header__orangeLine {
-  border-top: 2px solid #f39c42;
-  position: static;
+@media (max-width: $breakpoint_xxl) {
+    .header {
+        &__nav {
+            &-item {
+                font-size: 1.5rem;
+            }
+        }
+    }
+}
+
+@media (max-width: $breakpoint_xl) {
+    .header {
+        &__nav {
+            &-item {
+                font-size: 1.4rem;
+            }
+        }
+    }
+}
+
+@media (max-width: $breakpoint_l) {
+    .header {
+        &__nav {
+            &-item {
+                font-size: 1.3rem;
+            }
+        }
+    }
+}
+
+@media (max-width: $breakpoint_m) {
+    .header {
+        &__nav {
+            &-item {
+                font-size: 1.2rem;
+            }
+        }
+    }
+}
+
+@media (max-width: $breakpoint_s) {
+    .header {
+        &__nav {
+            &-item {
+                font-size: 1rem;
+            }
+        }
+    }
+}
+
+@media (max-width: $breakpoint_xs) {
+    .header {
+        &__nav {
+            &-item {
+                font-size: .8rem;
+            }
+        }
+    }
 }
 </style>

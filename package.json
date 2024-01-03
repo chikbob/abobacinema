@@ -7,7 +7,9 @@
     "devDependencies": {
         "axios": "^1.1.2",
         "laravel-vite-plugin": "^0.7.2",
+        "node-sass": "^9.0.0",
         "sass": "^1.62.1",
+        "sass-loader": "^13.3.3",
         "vite": "^4.3.3"
     },
     "dependencies": {
@@ -21,6 +23,7 @@
         "pinia-class-store": "^1.1.1",
         "vue": "^3.2.47",
         "vue3-bem": "^1.0.8",
-        "vueperslides": "^3.5.1"
+        "vueperslides": "^3.5.1",
+        "yarn": "^1.22.21"
     }
 }
